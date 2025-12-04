@@ -11,6 +11,6 @@ example/build/
 active-translation/
 
 # Ignore build output
-play-build
+play-example
 translation-review/node_modules/
 translation-review/dist/
