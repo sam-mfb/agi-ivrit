@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { execSync } from 'child_process';
-import { existsSync, rmSync, mkdirSync, cpSync } from 'fs';
+import { existsSync, rmSync, mkdirSync, cpSync, lstatSync, realpathSync, readdirSync } from 'fs';
+import { join } from 'path';
 import { log } from './utils/logger.js';
 
 /**
@@ -42,12 +43,37 @@ try {
 if (outputDir) {
   // Copy to output directory instead of zipping
   log.info(`Copying build to ${outputDir}...`);
+
+  let targetDir = outputDir;
+
+  // Check if outputDir is a symlink
   if (existsSync(outputDir)) {
-    rmSync(outputDir, { recursive: true, force: true });
+    const stats = lstatSync(outputDir);
+    if (stats.isSymbolicLink()) {
+      // Follow the symlink to get the real directory
+      targetDir = realpathSync(outputDir);
+      log.info(`Following symlink: ${outputDir} → ${targetDir}`);
+
+      // Clear contents of target directory but keep the symlink
+      const files = readdirSync(targetDir);
+      for (const file of files) {
+        rmSync(join(targetDir, file), { recursive: true, force: true });
+      }
+    } else if (stats.isDirectory()) {
+      // Regular directory - remove and recreate
+      rmSync(outputDir, { recursive: true, force: true });
+      mkdirSync(outputDir, { recursive: true });
+    }
+  } else {
+    // Doesn't exist - create it
+    mkdirSync(outputDir, { recursive: true });
   }
-  mkdirSync(outputDir, { recursive: true });
-  cpSync(buildDir, outputDir, { recursive: true });
+
+  cpSync(buildDir, targetDir, { recursive: true });
   log.success(`Copied to ${outputDir}`);
+  if (targetDir !== outputDir) {
+    log.info(`  (actual location: ${targetDir})`);
+  }
 
   // Clean up build directory
   log.info('Cleaning up build directory...');

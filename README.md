@@ -1,4 +1,4 @@
-# agivrit
+# agi-ivrit
 
 A project designed to make it easy to start with a legally acquired copy of an AGI game, prepare it for translation to Hebrew, translate it to Hebrew, and then recompile the translated game.
 
