@@ -1,0 +1,53 @@
+if (v35 != 255) {
+  accept.input();
+  cancel.line();
+  program.control();
+  clear.lines(23, 24, 0);
+  v36 = 12;
+
+  if (v35 == 1) {
+    print("You are now dead.");
+  }
+  v35 = 255;
+}
+v36--;
+
+if (v36 == 1) {
+  print("Thank you for playing this game. Better luck next time!");
+}
+
+if (controller(c19)) {
+  menu.input();
+}
+
+if (controller(c2) || said("help")) {
+  call(92);
+}
+
+if (controller(c5) || said("restore", "game") || said("restore")) {
+  restore.game();
+}
+
+if (controller(c7) || said("restart", "game") || said("restart")) {
+  restart.game();
+}
+
+if (controller(c10) || said("inv")) {
+  status();
+}
+
+if (controller(c1) || said("quit")) {
+  stop.sound();
+  quit(0);
+}
+
+if (f2 && !f4) {
+  print("You are dead! You can only restore, restart, quit the game");
+}
+return();
+
+
+// messages
+#message 1 "You are dead! You can only restore, restart, quit the game"
+#message 2 "Thank you for playing this game. Better luck next time!"
+#message 3 "You are now dead."

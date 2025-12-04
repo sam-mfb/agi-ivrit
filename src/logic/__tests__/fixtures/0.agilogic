@@ -1,0 +1,296 @@
+if (v17 > 0) {
+  call(98);
+}
+
+if (v0 == 0) {
+  call(91);
+
+  if (f6) {
+    disable.item(c20);
+    set(f14);
+    reset(f33);
+    new.room(2);
+  } else {
+    set.menu("AGI");
+    set.menu.item("About      ", c21);
+    set.menu.item("Help   <F1>", c2);
+    set.menu("File");
+    set.menu.item("Save     <F5>", c3);
+    set.menu.item("Restore  <F7>", c5);
+    set.menu.item("-------------", c20);
+    set.menu.item("Restart  <F9>", c7);
+    set.menu.item("Quit  <Alt-Z>", c1);
+    set.menu("Action");
+    set.menu.item("See Object  <F4>", c22);
+    set.menu.item("Inventory  <Tab>", c10);
+    set.menu("Special");
+    set.menu.item("Sound On/Off      <F2>", c16);
+    set.menu.item("Clock On/Off      <F6>", c12);
+    set.menu.item("Joystick      <Ctrl J>", c15);
+    set.menu.item("Pause            <Esc>", c18);
+    set.menu("Speed");
+    set.menu.item("Normal ", c24);
+    set.menu.item("Slow   ", c25);
+    set.menu.item("Fast   ", c23);
+    set.menu.item("Fastest", c28);
+    submit.menu();
+    disable.item(c20);
+    set(f33);
+    new.room(1);
+  }
+}
+
+if (f5) {
+  load.logics(90);
+  reset(f32);
+  clear.lines(24, 24, 0);
+  animate.obj(o0);
+  load.view.v(v16);
+  set.view.v(o0, v16);
+  observe.objs(o0);
+  v37 = 255;
+}
+
+if (v35 > 0) {
+  if (v35 != 255) {
+    disable.item(c21);
+    disable.item(c2);
+    disable.item(c3);
+    disable.item(c18);
+    disable.item(c16);
+    disable.item(c22);
+    disable.item(c15);
+    disable.item(c24);
+    disable.item(c28);
+    disable.item(c23);
+    disable.item(c25);
+    load.logics(94);
+  }
+  call(94);
+} else {
+  if (!f33) {
+    if (controller(c19)) {
+      menu.input();
+    }
+  }
+
+Address187:
+
+  if (controller(c21)) {
+    print("(about message)");
+  }
+
+  if (said("fastest") || said("fastest", "speed") || controller(c28)) {
+    v10 = 0;
+  }
+
+  if (said("fast") || said("fast", "speed") || controller(c23)) {
+    v10 = 1;
+  }
+
+  if (said("normal") || said("normal", "speed") || controller(c24)) {
+    v10 = 2;
+  }
+
+  if (said("slow") || said("slow", "speed") || controller(c25)) {
+    v10 = 4;
+  }
+
+  if (controller(c26)) {
+    v23--;
+  }
+
+  if (controller(c27) && (v23 < 15)) {
+    v23++;
+  }
+
+  if (controller(c16)) {
+    toggle(f9);
+  }
+
+  if (!f33) {
+    if (!f32) {
+      if (controller(c14)) {
+        set(f32);
+        print("(game version)");
+        version();
+        load.logics(99);
+      }
+    }
+  
+  Address333:
+  
+    if (said("save", "game") || said("save") || controller(c3)) {
+      stop.sound();
+      save.game();
+    }
+  
+    if (said("restore", "game") || said("restore") || controller(c5)) {
+      stop.sound();
+      restore.game();
+    }
+  
+    if (said("restart", "game") || said("restart") || controller(c7)) {
+      restart.game();
+    }
+  
+    if (controller(c2) || said("help")) {
+      call(92);
+    }
+  
+    if (controller(c9)) {
+      echo.line();
+    }
+  
+    if (controller(c17)) {
+      cancel.line();
+    }
+  
+    if (controller(c15)) {
+      init.joy();
+    }
+  
+    if (said("pause", "game") || said("pause") || controller(c18)) {
+      pause();
+    }
+  
+    if (controller(c10) || said("inv")) {
+      status();
+    }
+  
+    if (controller(c22) || controller(c4)) {
+      set(f13);
+      status();
+    
+      if ((v25 > 0) && (v25 != 255)) {
+        if (v25 == 1) {
+          show.obj(220);
+        }
+        reset(f13);
+      }
+    }
+  
+  Address494:
+  
+    if (said("quit", "game") || said("quit") || controller(c1)) {
+      stop.sound();
+      quit(0);
+    }
+  }
+
+Address515:
+  get.posn(o0, v30, v31);
+
+  if ((v30 == v32) && (v31 == v33) && (v6 == v34)) {
+    stop.cycling(o0);
+  } else {
+    if (!f30) {
+      start.cycling(o0);
+    }
+  }
+
+Address546:
+  v32 = v30;
+  v33 = v31;
+  v34 = v6;
+
+  if (f31) {
+    start.cycling(o0);
+  } else {
+    if ((v6 == 0) || f30) {
+      stop.cycling(o0);
+    }
+  }
+
+Address579:
+
+  if (said("clock") || controller(c12)) {
+    toggle(f34);
+  
+    if (!f34) {
+      status.line.on();
+    } else {
+      v37 = 255;
+    }
+  }
+
+  if (f34 && !f33) {
+    if (v37 != v11) {
+      set.text.attribute(0, 15);
+      display(0, 18, " %v13:%v12|2:%v11|2 ");
+      set.text.attribute(15, 0);
+      v37 = v11;
+    }
+  }
+
+Address637:
+
+  if (f12) {
+    clear.lines(23, 24, 0);
+    reset(f32);
+    disable.item(c20);
+  }
+  call.v(v0);
+
+  if (f32) {
+    call(99);
+  }
+  call(90);
+
+  if (f2 && (v9 > 0)) {
+    reset(f2);
+  
+    if (v9 == 1) {
+      print("I don't understand \"%w1\"");
+    }
+  
+    if (v9 == 2) {
+      print("I don't understand \"%w2\"");
+    }
+  
+    if (v9 == 3) {
+      print("I don't understand \"%w3\"");
+    }
+  }
+
+Address701:
+
+  if (f2 && !f4) {
+    print("I don't understand your request.");
+    reset(f2);
+  }
+  reset(f4);
+}
+return();
+
+
+// messages
+#message 1 "File"
+#message 2 "I don't understand your request."
+#message 3 "I don't understand \"%w3\""
+#message 4 "I don't understand \"%w2\""
+#message 5 "I don't understand \"%w1\""
+#message 6 " %v13:%v12|2:%v11|2 "
+#message 7 "(game version)"
+#message 8 "(about message)"
+#message 9 "Fastest"
+#message 10 "Fast   "
+#message 11 "Slow   "
+#message 12 "Normal "
+#message 13 "Speed"
+#message 14 "Pause            <Esc>"
+#message 15 "Joystick      <Ctrl J>"
+#message 16 "Clock On/Off      <F6>"
+#message 17 "Sound On/Off      <F2>"
+#message 18 "Special"
+#message 19 "Inventory  <Tab>"
+#message 20 "See Object  <F4>"
+#message 21 "Action"
+#message 22 "Quit  <Alt-Z>"
+#message 23 "Restart  <F9>"
+#message 24 "-------------"
+#message 25 "Restore  <F7>"
+#message 26 "Save     <F5>"
+#message 27 "Help   <F1>"
+#message 28 "About      "
+#message 29 "AGI"

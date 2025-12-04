@@ -1,0 +1,25 @@
+if (f5) {
+  print("Rock");
+  get("Key");
+  drop("Flashlight");
+}
+
+if (said("examine", "Rock")) {
+  print("It's a rock.");
+}
+
+if (controller(c1)) {
+  put("Rock");
+  get.v(v1);
+}
+
+if (f6) {
+  print("The Rock is heavy");
+  drop.v(v2);
+}
+
+return();
+
+
+// messages
+#message 1 "Test message"

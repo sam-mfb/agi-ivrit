@@ -1,0 +1,21 @@
+if (f5) {
+  print("Hello World");
+  print("Welcome");
+}
+
+if (f6) {
+  set.menu("File");
+  set.menu.item("Save", c3);
+  display(0, 0, "Test Display");
+}
+
+if (said("look")) {
+  print("Hello World");
+}
+
+return();
+
+
+// messages
+#message 1 "Hello World"
+#message 2 "Goodbye"

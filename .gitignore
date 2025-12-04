@@ -1,0 +1,16 @@
+# Ignore node modules
+node_modules/
+
+# Ignore entire project directory (user's game files)
+project/
+
+# Ignore example build artifacts
+example/build/
+
+# Active translation working directory
+active-translation/
+
+# Ignore build output
+play-build
+translation-review/node_modules/
+translation-review/dist/

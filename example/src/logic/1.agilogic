@@ -1,0 +1,24 @@
+if (f5) {
+  load.pic(v0);
+  draw.pic(v0);
+  discard.pic(v0);
+  set.horizon(50);
+  status.line.off();
+  prevent.input();
+  program.control();
+  show.pic();
+  display(10, 1, "         Intro/Opening screen");
+}
+
+if (have.key()) {
+  set(f14);
+  clear.lines(22, 24, 0);
+  stop.motion(o0);
+  reset(f33);
+  new.room(2);
+}
+return();
+
+
+// messages
+#message 1 "         Intro/Opening screen"

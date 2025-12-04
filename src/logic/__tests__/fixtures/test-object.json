@@ -1,0 +1,25 @@
+{
+  "maxAnimatedObjects": 16,
+  "objects": [
+    {
+      "name": "?",
+      "startingRoomNumber": 0
+    },
+    {
+      "name": "Rock",
+      "startingRoomNumber": 0
+    },
+    {
+      "name": "Key",
+      "startingRoomNumber": 255
+    },
+    {
+      "name": "?",
+      "startingRoomNumber": 0
+    },
+    {
+      "name": "Flashlight",
+      "startingRoomNumber": 0
+    }
+  ]
+}

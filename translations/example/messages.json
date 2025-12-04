@@ -1,0 +1,1029 @@
+{
+  "version": "1.0",
+  "metadata": {
+    "gameName": "AGI Example",
+    "contentType": "messages",
+    "sourceLanguage": "en",
+    "targetLanguage": "he",
+    "extractedDate": "2025-12-04T00:32:01.782Z",
+    "totalMessages": 311
+  },
+  "messages": [
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 1,
+      "original": "File",
+      "translation": "קובץ",
+      "notes": "Menu title",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 2,
+      "original": "I don't understand your request.",
+      "translation": "אני לא מבין את הבקשה שלך.",
+      "notes": "Parser error - unrecognized command",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 3,
+      "original": "I don't understand \\\"%w3\\\"",
+      "translation": "אני לא מבין את \\\"%w3\\\"",
+      "notes": "Parser error - unknown word 3",
+      "placeholders": [
+        "%w3"
+      ]
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 4,
+      "original": "I don't understand \\\"%w2\\\"",
+      "translation": "אני לא מבין את \\\"%w2\\\"",
+      "notes": "Parser error - unknown word 2",
+      "placeholders": [
+        "%w2"
+      ]
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 5,
+      "original": "I don't understand \\\"%w1\\\"",
+      "translation": "אני לא מבין את \\\"%w1\\\"",
+      "notes": "Parser error - unknown word 1",
+      "placeholders": [
+        "%w1"
+      ]
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 6,
+      "original": " %v13:%v12|2:%v11|2 ",
+      "translation": " %v13:%v12|2:%v11|2 ",
+      "notes": "Clock display format - do not translate",
+      "placeholders": [
+        "%v"
+      ]
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 7,
+      "original": "(game version)",
+      "translation": "(גרסת המשחק)",
+      "notes": "Version info placeholder",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 8,
+      "original": "(about message)",
+      "translation": "(אודות)",
+      "notes": "About dialog placeholder",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 9,
+      "original": "Fastest",
+      "translation": "מהיר ביותר",
+      "notes": "Speed menu item",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 10,
+      "original": "Fast   ",
+      "translation": "מהיר  ",
+      "notes": "Speed menu item",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 11,
+      "original": "Slow   ",
+      "translation": "איטי  ",
+      "notes": "Speed menu item",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 12,
+      "original": "Normal ",
+      "translation": "רגיל  ",
+      "notes": "Speed menu item",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 13,
+      "original": "Speed",
+      "translation": "מהירות",
+      "notes": "Menu title",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 14,
+      "original": "Pause            <Esc>",
+      "translation": "השהה           <Esc>",
+      "notes": "Menu item with hotkey",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 15,
+      "original": "Joystick      <Ctrl J>",
+      "translation": "ג'ויסטיק     <Ctrl J>",
+      "notes": "Menu item with hotkey",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 16,
+      "original": "Clock On/Off      <F6>",
+      "translation": "שעון פועל/כבוי   <F6>",
+      "notes": "Menu item with hotkey",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 17,
+      "original": "Sound On/Off      <F2>",
+      "translation": "צליל פועל/כבוי   <F2>",
+      "notes": "Menu item with hotkey",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 18,
+      "original": "Special",
+      "translation": "מיוחד",
+      "notes": "Menu title",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 19,
+      "original": "Inventory  <Tab>",
+      "translation": "מלאי      <Tab>",
+      "notes": "Menu item with hotkey",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 20,
+      "original": "See Object  <F4>",
+      "translation": "הצג פריט   <F4>",
+      "notes": "Menu item with hotkey",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 21,
+      "original": "Action",
+      "translation": "פעולה",
+      "notes": "Menu title",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 22,
+      "original": "Quit  <Alt-Z>",
+      "translation": "יציאה <Alt-Z>",
+      "notes": "Menu item with hotkey",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 23,
+      "original": "Restart  <F9>",
+      "translation": "התחל מחדש <F9>",
+      "notes": "Menu item with hotkey",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 24,
+      "original": "-------------",
+      "translation": "-------------",
+      "notes": "Menu separator - do not translate",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 25,
+      "original": "Restore  <F7>",
+      "translation": "שחזר     <F7>",
+      "notes": "Menu item with hotkey",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 26,
+      "original": "Save     <F5>",
+      "translation": "שמור     <F5>",
+      "notes": "Menu item with hotkey",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 27,
+      "original": "Help   <F1>",
+      "translation": "עזרה   <F1>",
+      "notes": "Menu item with hotkey",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 28,
+      "original": "About      ",
+      "translation": "אודות     ",
+      "notes": "Menu item",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 29,
+      "original": "AGI",
+      "translation": "AGI",
+      "notes": "Brand name - do not translate",
+      "placeholders": []
+    },
+    {
+      "logicFile": "1.agilogic",
+      "messageNumber": 1,
+      "original": "         Intro/Opening screen",
+      "translation": "         מסך פתיחה",
+      "notes": "Intro screen text",
+      "placeholders": []
+    },
+    {
+      "logicFile": "2.agilogic",
+      "messageNumber": 1,
+      "original": "This is an empty room.",
+      "translation": "זהו חדר ריק.",
+      "notes": "Room description",
+      "placeholders": []
+    },
+    {
+      "logicFile": "90.agilogic",
+      "messageNumber": 1,
+      "original": "What do you want me to do with it?",
+      "translation": "מה אתה רוצה שאעשה עם זה?",
+      "notes": "Generic use response",
+      "placeholders": []
+    },
+    {
+      "logicFile": "90.agilogic",
+      "messageNumber": 2,
+      "original": "You can't get that here!",
+      "translation": "אי אפשר לקחת את זה כאן!",
+      "notes": "Can't take item response",
+      "placeholders": []
+    },
+    {
+      "logicFile": "90.agilogic",
+      "messageNumber": 3,
+      "original": "What? Where?",
+      "translation": "מה? איפה?",
+      "notes": "Can't examine response",
+      "placeholders": []
+    },
+    {
+      "logicFile": "90.agilogic",
+      "messageNumber": 4,
+      "original": "You don't have it.",
+      "translation": "אין לך את זה.",
+      "notes": "Don't have item response",
+      "placeholders": []
+    },
+    {
+      "logicFile": "90.agilogic",
+      "messageNumber": 5,
+      "original": "test object",
+      "translation": "פריט בדיקה",
+      "notes": "Test object name",
+      "placeholders": []
+    },
+    {
+      "logicFile": "91.agilogic",
+      "messageNumber": 1,
+      "original": "_",
+      "translation": "_",
+      "notes": "Cursor character - do not translate",
+      "placeholders": []
+    },
+    {
+      "logicFile": "91.agilogic",
+      "messageNumber": 2,
+      "original": ">",
+      "translation": ">",
+      "notes": "Prompt character - do not translate",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 1,
+      "original": "      -  Decreases volume.",
+      "translation": "      -  מוריד עוצמת קול.",
+      "notes": "Help text",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 2,
+      "original": "      +  Increases volume.",
+      "translation": "      +  מעלה עוצמת קול.",
+      "notes": "Help text",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 3,
+      "original": "  Ctrl-J sets up your joystick.",
+      "translation": "  Ctrl-J מגדיר את הג'ויסטיק.",
+      "notes": "Help text",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 4,
+      "original": "     ESC pops up menus.",
+      "translation": "     ESC פותח תפריט.",
+      "notes": "Help text",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 5,
+      "original": "     TAB shows the inventory screen.",
+      "translation": "     TAB מציג את מסך המלאי.",
+      "notes": "Help text",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 6,
+      "original": "   ALT-Z quits the game.",
+      "translation": "   ALT-Z יוצא מהמשחק.",
+      "notes": "Help text",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 7,
+      "original": "      F9 restarts the game.",
+      "translation": "      F9 מתחיל מחדש.",
+      "notes": "Help text",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 8,
+      "original": "      F7 restores a saved game.",
+      "translation": "      F7 משחזר משחק שמור.",
+      "notes": "Help text",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 9,
+      "original": "      F5 saves your current game.",
+      "translation": "      F5 שומר את המשחק.",
+      "notes": "Help text",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 10,
+      "original": "      F3 retypes the last line typed.",
+      "translation": "      F3 מקליד שוב את השורה האחרונה.",
+      "notes": "Help text",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 11,
+      "original": "      F2 turns the sound off and on.",
+      "translation": "      F2 מדליק ומכבה צלילים.",
+      "notes": "Help text",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 12,
+      "original": "      F1 displays this message.",
+      "translation": "      F1 מציג הודעה זו.",
+      "notes": "Help text",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 13,
+      "original": "               AGI Help",
+      "translation": "              עזרת AGI",
+      "notes": "Help title",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 1,
+      "original": "coords      - ego's coordinates on/off ",
+      "translation": "",
+      "notes": "Debug help - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 2,
+      "original": "release pri - release ego's priority   ",
+      "translation": "",
+      "notes": "Debug help - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 3,
+      "original": "set pri     - set ego's priority       ",
+      "translation": "",
+      "notes": "Debug help - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 4,
+      "original": "              an inventory object      ",
+      "translation": "",
+      "notes": "Debug help - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 5,
+      "original": "object room - display room number of   ",
+      "translation": "",
+      "notes": "Debug help - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 6,
+      "original": "gimme gimme - get all inventory objects",
+      "translation": "",
+      "notes": "Debug help - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 7,
+      "original": "get object  - get any inventory object ",
+      "translation": "",
+      "notes": "Debug help - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 8,
+      "original": "show pri    - display priority screen  ",
+      "translation": "",
+      "notes": "Debug help - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 9,
+      "original": "              a screen object          ",
+      "translation": "",
+      "notes": "Debug help - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 10,
+      "original": "object      - display information about",
+      "translation": "",
+      "notes": "Debug help - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 11,
+      "original": "reset flag  - reset (clear) a flag     ",
+      "translation": "",
+      "notes": "Debug help - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 12,
+      "original": "set flag    - set a flag               ",
+      "translation": "",
+      "notes": "Debug help - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 13,
+      "original": "show flag   - display status of a flag ",
+      "translation": "",
+      "notes": "Debug help - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 14,
+      "original": "set var     - change value of a var    ",
+      "translation": "",
+      "notes": "Debug help - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 15,
+      "original": "show var    - display value of a var   ",
+      "translation": "",
+      "notes": "Debug help - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 16,
+      "original": "pos         - change ego's position    ",
+      "translation": "",
+      "notes": "Debug help - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 17,
+      "original": "tp          - teleport                 ",
+      "translation": "",
+      "notes": "Debug help - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 18,
+      "original": "show mem    - display memory stats     ",
+      "translation": "",
+      "notes": "Debug help - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 19,
+      "original": "              (SCROLL LOCK to activate)",
+      "translation": "",
+      "notes": "Debug help - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 20,
+      "original": "trace on    - enables tracing          ",
+      "translation": "",
+      "notes": "Debug help - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 21,
+      "original": "           DEBUG MODE HELP             ",
+      "translation": "",
+      "notes": "Debug help title - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "94.agilogic",
+      "messageNumber": 1,
+      "original": "You are dead! You can only restore, restart, quit the game",
+      "translation": "אתה מת! אתה יכול רק לשחזר, להתחיל מחדש, או לצאת מהמשחק",
+      "notes": "Death message",
+      "placeholders": []
+    },
+    {
+      "logicFile": "94.agilogic",
+      "messageNumber": 2,
+      "original": "Thank you for playing this game. Better luck next time!",
+      "translation": "תודה ששיחקת במשחק הזה. בהצלחה בפעם הבאה!",
+      "notes": "End game message",
+      "placeholders": []
+    },
+    {
+      "logicFile": "94.agilogic",
+      "messageNumber": 3,
+      "original": "You are now dead.",
+      "translation": "אתה מת עכשיו.",
+      "notes": "Death message",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 1,
+      "original": "increment",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 2,
+      "original": "decrement",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 3,
+      "original": "assignn",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 4,
+      "original": "assignv",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 5,
+      "original": "addn",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 6,
+      "original": "addv",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 7,
+      "original": "subn",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 8,
+      "original": "subv",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 9,
+      "original": "lindirectv",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 10,
+      "original": "rindirect",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 11,
+      "original": "lindirectn",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 12,
+      "original": "set",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 13,
+      "original": "reset",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 14,
+      "original": "toggle",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 15,
+      "original": "set.v",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 16,
+      "original": "reset.v",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 17,
+      "original": "toggle.v",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 18,
+      "original": "new.room",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 19,
+      "original": "new.room.v",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 20,
+      "original": "load.logics",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 21,
+      "original": "load.logics.v",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 22,
+      "original": "call",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 23,
+      "original": "call.v",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 24,
+      "original": "load.pic",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 25,
+      "original": "draw.pic",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 26,
+      "original": "show.pic",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 27,
+      "original": "discard.pic",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 28,
+      "original": "overlay.pic",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 29,
+      "original": "show.pri.screen",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 30,
+      "original": "load.view",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 31,
+      "original": "load.view.v",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 32,
+      "original": "discard.view",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 33,
+      "original": "animate.obj",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 34,
+      "original": "unanimate.all",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 35,
+      "original": "draw",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 36,
+      "original": "erase",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 37,
+      "original": "position",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 38,
+      "original": "position.v",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 39,
+      "original": "get.posn",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 40,
+      "original": "reposition",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 41,
+      "original": "set.view",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 42,
+      "original": "set.view.v",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 43,
+      "original": "set.loop",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 44,
+      "original": "set.loop.v",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 45,
+      "original": "fix.loop",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 46,
+      "original": "release.loop",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 47,
+      "original": "set.cel",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 48,
+      "original": "set.cel.v",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 49,
+      "original": "last.cel",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 50,
+      "original": "current.cel",
+      "translation": "",
+      "notes": "AGI command name - not translated",
+      "placeholders": []
+    },
+    {
+      "logicFile": "99.agilogic",
+      "messageNumber": 7,
+      "original": "You gottum!",
+      "translation": "יש לך את זה!",
+      "notes": "Debug - got item message",
+      "placeholders": []
+    }
+  ]
+}

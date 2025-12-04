@@ -1,0 +1,116 @@
+.word-number {
+  text-align: center;
+  font-weight: 500;
+  width: 60px;
+}
+
+.word {
+  font-weight: 600;
+  width: 100px;
+}
+
+.original-synonyms {
+  width: 150px;
+  max-width: 150px;
+}
+
+.synonym-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.synonym-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  background-color: #f0f0f0;
+  color: #333;
+  border-radius: 3px;
+  font-size: 13px;
+  position: relative;
+}
+
+.synonym-badge.editable {
+  padding-left: 24px;
+  background-color: #e3f2fd;
+  border: 1px solid #90caf9;
+}
+
+.remove-synonym {
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+.remove-synonym:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.no-synonyms {
+  color: #999;
+}
+
+.translated-synonyms {
+  width: 40%;
+}
+
+.synonym-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.synonym-editor .synonym-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.synonym-editor input {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.synonym-editor input:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1);
+}
+
+.notes {
+  width: 30%;
+}
+
+.notes input {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.notes input:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1);
+}

@@ -1,0 +1,153 @@
+if (said("debug", "help")) {
+  call(93);
+}
+
+if (said("trace", "on")) {
+  set(f10);
+}
+
+if (said("show", "mem")) {
+  show.mem();
+}
+
+if (said("tp")) {
+  get.num("new room: ", v255);
+  new.room.v(v255);
+}
+
+if (said("pos")) {
+  get.num("x: ", v254);
+  get.num("y: ", v255);
+  erase(o0);
+  reposition.to.v(o0, v254, v255);
+  draw(o0);
+}
+
+if (said("show", "var")) {
+  get.num("var number: ", v255);
+  v254 = *v255;
+  print("var %v255: %v254");
+}
+
+if (said("set", "var")) {
+  get.num("var number: ", v254);
+  get.num("var value: ", v255);
+  *v254 = v255;
+}
+
+if (said("show", "flag")) {
+  get.num("flag number: ", v255);
+
+  if (issetv(v255)) {
+    print("flag %v255 is set");
+  } else {
+    print("flag %v255 is not set");
+  }
+}
+
+if (said("set", "flag")) {
+  get.num("flag number: ", v255);
+  set.v(v255);
+}
+
+if (said("reset", "flag")) {
+  get.num("flag number: ", v255);
+  reset.v(v255);
+}
+
+if (said("object")) {
+  get.num("object #: ", v255);
+  obj.status.v(v255);
+}
+
+if (said("show", "pri")) {
+  show.pri.screen();
+}
+
+if (said("get", "object")) {
+  get.num("object number: ", v255);
+
+  if (v255 > 1) {
+    print("Invalid object number!");
+  } else {
+    get.v(v255);
+  }
+}
+
+if (said("gimme", "gimme")) {
+  print("You gottum!");
+  v255 = 0;
+
+Address229:
+  get.v(v255);
+
+  if (v255 < 1) {
+    v255++;
+    goto(Address229);
+  }
+}
+
+Address243:
+
+if (said("object", "room")) {
+  get.num("Object number: ", v255);
+
+  if (v255 > 1) {
+    print("Invalid object number!");
+  } else {
+    get.room.v(v255, v254);
+  
+    if (v254 == 255) {
+      print("Object %v255 is in your inventory.");
+    } else {
+      print("Object %v255 is in room %v254.");
+    }
+  }
+}
+
+if (said("set", "pri")) {
+  get.num("New priority: ", v255);
+  set.priority.v(o0, v255);
+}
+
+if (said("release", "pri")) {
+  release.priority(o0);
+}
+
+if (said("coords")) {
+  toggle(f35);
+
+  if (!f35) {
+    clear.lines(24, 24, 0);
+  }
+}
+
+Address334:
+
+if (f35) {
+  get.posn(o0, v253, v254);
+  get.priority(o0, v255);
+  display(24, 15, "Rm %v0|3 Pri %v255|2 x:%v253|3 y:%v254|3");
+}
+return();
+
+
+// messages
+#message 1 "Rm %v0|3 Pri %v255|2 x:%v253|3 y:%v254|3"
+#message 2 "New priority: "
+#message 3 "Invalid object number!"
+#message 4 "Object %v255 is in your inventory."
+#message 5 "Object %v255 is in room %v254."
+#message 6 "Object number: "
+#message 7 "You gottum!"
+#message 8 "object number: "
+#message 9 "object #: "
+#message 10 "flag number: "
+#message 11 "flag %v255 is set"
+#message 12 "flag %v255 is not set"
+#message 13 "var value: "
+#message 14 "var number: "
+#message 15 "var %v255: %v254"
+#message 16 "y: "
+#message 17 "x: "
+#message 18 "new room: "

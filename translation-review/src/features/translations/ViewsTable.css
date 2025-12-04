@@ -1,0 +1,29 @@
+.view-number {
+  text-align: center;
+  font-weight: 500;
+  width: 100px;
+}
+
+.view-description {
+  max-width: 300px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Use textarea for longer view descriptions */
+.translations-table td.translation textarea {
+  width: 100%;
+  min-width: 250px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: inherit;
+  resize: vertical;
+}
+
+.translations-table td.translation textarea:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+}

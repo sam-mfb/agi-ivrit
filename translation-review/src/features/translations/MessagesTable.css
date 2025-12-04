@@ -1,0 +1,284 @@
+.table-container {
+  padding: 20px;
+  height: 100%;
+  overflow: auto;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.table-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.search-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  min-width: 200px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1);
+}
+
+.clear-search {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  color: #666;
+  font-size: 14px;
+}
+
+.clear-search:hover {
+  color: #333;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-group label {
+  font-size: 14px;
+  color: #666;
+}
+
+.filter-group select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+  cursor: pointer;
+  min-width: 150px;
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1);
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.reset-button {
+  padding: 10px 20px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.reset-button:hover {
+  background-color: #c82333;
+}
+
+.export-button {
+  padding: 10px 20px;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.export-button:hover {
+  background-color: #0052a3;
+}
+
+.loading,
+.error,
+.empty {
+  padding: 40px;
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+}
+
+.error {
+  color: #cc0000;
+}
+
+/* Legacy table styles (kept for other tables) */
+.translations-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.translations-table th {
+  background-color: #f5f5f5;
+  padding: 12px 8px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.translations-table td {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+
+.translations-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Virtual scrolling table styles */
+.virtual-table-header,
+.virtual-row {
+  display: grid;
+  grid-template-columns: 100px 50px 1fr 1.2fr 160px 90px;
+  gap: 8px;
+  align-items: start;
+}
+
+.virtual-table-header {
+  background-color: #f5f5f5;
+  padding: 12px 8px;
+  font-weight: 600;
+  border-bottom: 2px solid #ddd;
+  font-size: 14px;
+}
+
+.virtual-row {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  box-sizing: border-box;
+  font-size: 14px;
+  background-color: white;
+}
+
+.virtual-row:hover {
+  background-color: #f9f9f9;
+}
+
+.header-cell,
+.cell {
+  padding: 4px;
+}
+
+.virtual-list {
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.logic-file {
+  font-family: monospace;
+  font-size: 13px;
+  color: #666;
+  width: 120px;
+}
+
+.message-number {
+  text-align: center;
+  font-weight: 500;
+  width: 60px;
+}
+
+.original {
+  max-width: 300px;
+  word-wrap: break-word;
+  max-height: 64px;
+  overflow-y: auto;
+  line-height: 1.4;
+}
+
+.translation textarea,
+.notes textarea {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: none;
+  overflow-y: auto;
+  min-height: 60px;
+  max-height: 120px;
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+
+.translation {
+  min-width: 250px;
+}
+
+.notes {
+  min-width: 200px;
+}
+
+.translation textarea:focus,
+.notes textarea:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1);
+}
+
+.placeholders {
+  width: 120px;
+}
+
+.placeholder-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 6px;
+  background-color: #e8f4f8;
+  color: #0066cc;
+  border-radius: 3px;
+  font-size: 12px;
+  font-family: monospace;
+  font-weight: 500;
+}
+
+.no-placeholders {
+  color: #999;
+}
+
+mark {
+  background-color: #fff3cd;
+  padding: 0 2px;
+  border-radius: 2px;
+}
