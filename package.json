@@ -8,6 +8,7 @@
     "release": "vite-node scripts/release.ts",
     "release:dev": "vite-node scripts/release-dev.ts",
     "rebuild-example": "vite-node scripts/rebuild-example.ts",
+    "rebuild-example:dev": "vite-node scripts/rebuild-example.ts play-example",
     "review:dev": "vite translation-review --config translation-review/vite.config.ts",
     "review:build": "vite build translation-review --config translation-review/vite.config.ts",
     "typecheck:scripts": "tsc --project scripts/tsconfig.json --noEmit",
