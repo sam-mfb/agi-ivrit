@@ -15,18 +15,36 @@ The key changes from those projects are:
 
 ---
 
+## tl;dr
+
+Here's how to translate an AGI game.
+
+- Start with all the original AGI files in a zip folder. You can use the `example.zip` file in `example/` if you are just experimenting
+- Copy it to project/
+- Run `npm run init-translations`
+- Run `npm run extract-translations`
+- Run `npm run review:dev`
+- Go to https://localhost:3000/agi-ivrit - translate all the phrases
+- Once you are done translating export all the json using the 'Export' buttons
+- Copy them in to translations/[subdir] where subdir is the name of your directory.
+- Make modified pic, view, and logic files using WinAGI or your favorite tool of choice (you can see an example of these in `translations/example`)
+- Copy those modified files to the appropriate subdirectories in translations/[subdir] (again, look at the example in `translations/example`)
+- Run `npm run release [subdir]` where subdir is the name of the subdir in translations/ where you copied all your jsons and other translation files
+- Your final translated game is now available in project/final/agi-build.zip
+- Add it to ScummVM as a fan made game and test it. Make sure to set the language to Hebrew and enable using WORDS.TOK.EXTENDED
+
 ## Overview of AGI Translation
 
 The basic steps in translating an AGI game to Hebrew (or any language presumably) are:
 
-| Step | Description |
-|------|-------------|
-| **1. Game Preparation** | Decompiling the original AGI files and converting all message strings to indexed references (e.g., `display(m1)` rather than `display("Hello, World")`) |
-| **2. Text Extraction** | Extracting all user-facing English text for (a) in-game messages, (b) inventory objects, (c) view descriptions, and (d) command vocabulary. |
-| **3. Translation** | Translating all text to Hebrew, including both the strings extracted in step 2, but also text that is represented visually in PIC or VIEW resources. |
+| Step                      | Description                                                                                                                                                                                                                                                                                            |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **1. Game Preparation**   | Decompiling the original AGI files and converting all message strings to indexed references (e.g., `display(m1)` rather than `display("Hello, World")`)                                                                                                                                                |
+| **2. Text Extraction**    | Extracting all user-facing English text for (a) in-game messages, (b) inventory objects, (c) view descriptions, and (d) command vocabulary.                                                                                                                                                            |
+| **3. Translation**        | Translating all text to Hebrew, including both the strings extracted in step 2, but also text that is represented visually in PIC or VIEW resources.                                                                                                                                                   |
 | **4. Game Modifications** | Modifying game logic to account for RTL display and any other translation-required adjustments. For example, display() commands may need to be shifted to be right-aligned, or views may need to be displayed in different locations or to account for different widths or number of animation frames. |
-| **5. Rebuilding** | Importing the translated strings back into the decompiled files, copying over new PIC and VIEW resources, applying game logic patches, copying over a Hebrew font, creating a WORDS.TOK.EXTENDED file, and then recompiling all of this into a new AGI game. |
-| **6. Release** | Preparing a binary patch that can be applied by users who own a legal copy of the game. Preparing a patch for ScummVM to recognize the patched game as a Hebrew language version of the game. |
+| **5. Rebuilding**         | Importing the translated strings back into the decompiled files, copying over new PIC and VIEW resources, applying game logic patches, copying over a Hebrew font, creating a WORDS.TOK.EXTENDED file, and then recompiling all of this into a new AGI game.                                           |
+| **6. Release**            | Preparing a binary patch that can be applied by users who own a legal copy of the game. Preparing a patch for ScummVM to recognize the patched game as a Hebrew language version of the game.                                                                                                          |
 
 ---
 
@@ -75,11 +93,11 @@ npm run extract-translations
 
 This will extract all the strings potentially requiring translation into four files in the `active-translation/` directory:
 
-| File | Contents |
-|------|----------|
-| `messages.json` | All in-game messages |
-| `objects.json` | Names of inventory objects |
-| `views.json` | View descriptions |
+| File              | Contents                          |
+| ----------------- | --------------------------------- |
+| `messages.json`   | All in-game messages              |
+| `objects.json`    | Names of inventory objects        |
+| `views.json`      | View descriptions                 |
 | `vocabulary.json` | Command vocabulary synonym groups |
 
 The files in here are your working files. They do get committed to version control and this is where you are going to do your translation work.
@@ -108,11 +126,11 @@ When ready, create a subdirectory for your game in the `translations/` folder.
 
 Copy the completed `*.json` files from `active-translation/` into that subdirectory. Also create `view/`, `pic/`, and `logic/` subdirectories which contain:
 
-| Directory | Contents |
-|-----------|----------|
-| `view/` | View files in `.agiview` (decompiled) or `.agv` (compiled WinAGI) format. Optional `.agiviewdesc` files for descriptions. Files can be named `12.agiview`, `View12.agv`, etc. |
-| `pic/` | Picture files in `.agipic` (decompiled) or `.agp` (compiled WinAGI) format. Files can be named `12.agipic`, `Pic12.agp`, `Picture12.agp`, etc. |
-| `logic/` | Patch files (.patch) that will patch .agilogic files. |
+| Directory | Contents                                                                                                                                                                      |
+| --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `view/`   | View files in `.agiview` (decompiled) or `.agv` (compiled WinAGI) format. Optional `.agiviewdesc` files for descriptions. Files can be named `12.agiview`, `View12.agv`, etc. |
+| `pic/`    | Picture files in `.agipic` (decompiled) or `.agp` (compiled WinAGI) format. Files can be named `12.agipic`, `Pic12.agp`, `Picture12.agp`, etc.                                |
+| `logic/`  | Patch files (.patch) that will patch .agilogic files.                                                                                                                         |
 
 Compiled WinAGI files (`.agv`, `.agp`) are automatically decompiled during the build process.
 
