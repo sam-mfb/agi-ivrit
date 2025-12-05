@@ -1,0 +1,11 @@
+--- project/tmp/src/logic/1.agilogic
++++ translations/example/logic/1.agilogic
+@@ -7,7 +7,7 @@
+   prevent.input();
+   program.control();
+   show.pic();
+-  display(10, 1, m1);
++  display(10, 8, m1);
+ }
+
+ if (have.key()) {
