@@ -24,7 +24,7 @@ Here's how to translate an AGI game.
 - Run `npm run init-translations`
 - Run `npm run extract-translations`
 - Run `npm run review:dev`
-- Go to https://localhost:3000/agi-ivrit - translate all the phrases
+- Go to http://localhost:3000/agi-ivrit - translate all the phrases
 - Once you are done translating export all the json using the 'Export' buttons
 - Copy them in to translations/[subdir] where subdir is the name of your directory.
 - Make modified pic, view, and logic files using WinAGI or your favorite tool of choice (you can see an example of these in `translations/example`)
