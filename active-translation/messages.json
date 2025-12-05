@@ -1,0 +1,2601 @@
+{
+  "version": "1.0",
+  "metadata": {
+    "gameName": "",
+    "contentType": "messages",
+    "sourceLanguage": "en",
+    "targetLanguage": "",
+    "extractedDate": "2025-12-05T21:29:42.628Z",
+    "totalMessages": 311
+  },
+  "messages": [
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 1,
+      "original": "File",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 2,
+      "original": "I don't understand your request.",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 3,
+      "original": "I don't understand \\\"%w3\\\"",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%w3"
+      ]
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 4,
+      "original": "I don't understand \\\"%w2\\\"",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%w2"
+      ]
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 5,
+      "original": "I don't understand \\\"%w1\\\"",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%w1"
+      ]
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 6,
+      "original": " %v13:%v12|2:%v11|2 ",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v"
+      ]
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 7,
+      "original": "(game version)",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 8,
+      "original": "(about message)",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 9,
+      "original": "Fastest",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 10,
+      "original": "Fast   ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 11,
+      "original": "Slow   ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 12,
+      "original": "Normal ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 13,
+      "original": "Speed",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 14,
+      "original": "Pause            <Esc>",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 15,
+      "original": "Joystick      <Ctrl J>",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 16,
+      "original": "Clock On/Off      <F6>",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 17,
+      "original": "Sound On/Off      <F2>",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 18,
+      "original": "Special",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 19,
+      "original": "Inventory  <Tab>",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 20,
+      "original": "See Object  <F4>",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 21,
+      "original": "Action",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 22,
+      "original": "Quit  <Alt-Z>",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 23,
+      "original": "Restart  <F9>",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 24,
+      "original": "-------------",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 25,
+      "original": "Restore  <F7>",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 26,
+      "original": "Save     <F5>",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 27,
+      "original": "Help   <F1>",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 28,
+      "original": "About      ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "0.agilogic",
+      "messageNumber": 29,
+      "original": "AGI",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "1.agilogic",
+      "messageNumber": 1,
+      "original": "         Intro/Opening screen",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "2.agilogic",
+      "messageNumber": 1,
+      "original": "This is an empty room.",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "90.agilogic",
+      "messageNumber": 1,
+      "original": "What do you want me to do with it?",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "90.agilogic",
+      "messageNumber": 2,
+      "original": "You can't get that here!",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "90.agilogic",
+      "messageNumber": 3,
+      "original": "What? Where?",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "90.agilogic",
+      "messageNumber": 4,
+      "original": "You don't have it.",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "90.agilogic",
+      "messageNumber": 5,
+      "original": "test object",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "91.agilogic",
+      "messageNumber": 1,
+      "original": "_",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "91.agilogic",
+      "messageNumber": 2,
+      "original": ">",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 1,
+      "original": "      -  Decreases volume.",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 2,
+      "original": "      +  Increases volume.",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 3,
+      "original": "  Ctrl-J sets up your joystick.",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 4,
+      "original": "     ESC pops up menus.",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 5,
+      "original": "     TAB shows the inventory screen.",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 6,
+      "original": "   ALT-Z quits the game.",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 7,
+      "original": "      F9 restarts the game.",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 8,
+      "original": "      F7 restores a saved game.",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 9,
+      "original": "      F5 saves your current game.",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 10,
+      "original": "      F3 retypes the last line typed.",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 11,
+      "original": "      F2 turns the sound off and on.",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 12,
+      "original": "      F1 displays this message.",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "92.agilogic",
+      "messageNumber": 13,
+      "original": "               AGI Help",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 1,
+      "original": "coords      - ego's coordinates on/off ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 2,
+      "original": "release pri - release ego's priority   ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 3,
+      "original": "set pri     - set ego's priority       ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 4,
+      "original": "              an inventory object      ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 5,
+      "original": "object room - display room number of   ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 6,
+      "original": "gimme gimme - get all inventory objects",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 7,
+      "original": "get object  - get any inventory object ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 8,
+      "original": "show pri    - display priority screen  ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 9,
+      "original": "              a screen object          ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 10,
+      "original": "object      - display information about",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 11,
+      "original": "reset flag  - reset (clear) a flag     ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 12,
+      "original": "set flag    - set a flag               ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 13,
+      "original": "show flag   - display status of a flag ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 14,
+      "original": "set var     - change value of a var    ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 15,
+      "original": "show var    - display value of a var   ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 16,
+      "original": "pos         - change ego's position    ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 17,
+      "original": "tp          - teleport                 ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 18,
+      "original": "show mem    - display memory stats     ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 19,
+      "original": "              (SCROLL LOCK to activate)",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 20,
+      "original": "trace on    - enables tracing          ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "93.agilogic",
+      "messageNumber": 21,
+      "original": "           DEBUG MODE HELP             ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "94.agilogic",
+      "messageNumber": 1,
+      "original": "You are dead! You can only restore, restart, quit the game",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "94.agilogic",
+      "messageNumber": 2,
+      "original": "Thank you for playing this game. Better luck next time!",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "94.agilogic",
+      "messageNumber": 3,
+      "original": "You are now dead.",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 1,
+      "original": "increment",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 2,
+      "original": "decrement",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 3,
+      "original": "assignn",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 4,
+      "original": "assignv",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 5,
+      "original": "addn",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 6,
+      "original": "addv",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 7,
+      "original": "subn",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 8,
+      "original": "subv",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 9,
+      "original": "lindirectv",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 10,
+      "original": "rindirect",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 11,
+      "original": "lindirectn",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 12,
+      "original": "set",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 13,
+      "original": "reset",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 14,
+      "original": "toggle",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 15,
+      "original": "set.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 16,
+      "original": "reset.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 17,
+      "original": "toggle.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 18,
+      "original": "new.room",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 19,
+      "original": "new.room.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 20,
+      "original": "load.logics",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 21,
+      "original": "load.logics.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 22,
+      "original": "call",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 23,
+      "original": "call.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 24,
+      "original": "load.pic",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 25,
+      "original": "draw.pic",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 26,
+      "original": "show.pic",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 27,
+      "original": "discard.pic",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 28,
+      "original": "overlay.pic",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 29,
+      "original": "show.pri.screen",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 30,
+      "original": "load.view",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 31,
+      "original": "load.view.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 32,
+      "original": "discard.view",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 33,
+      "original": "animate.obj",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 34,
+      "original": "unanimate.all",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 35,
+      "original": "draw",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 36,
+      "original": "erase",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 37,
+      "original": "position",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 38,
+      "original": "position.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 39,
+      "original": "get.posn",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 40,
+      "original": "reposition",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 41,
+      "original": "set.view",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 42,
+      "original": "set.view.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 43,
+      "original": "set.loop",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 44,
+      "original": "set.loop.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 45,
+      "original": "fix.loop",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 46,
+      "original": "release.loop",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 47,
+      "original": "set.cel",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 48,
+      "original": "set.cel.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 49,
+      "original": "last.cel",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 50,
+      "original": "current.cel",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 51,
+      "original": "current.loop",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 52,
+      "original": "current.view",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 53,
+      "original": "number.of.loops",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 54,
+      "original": "set.priority",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 55,
+      "original": "set.priority.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 56,
+      "original": "release.priority",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 57,
+      "original": "get.priority",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 58,
+      "original": "stop.update",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 59,
+      "original": "start.update",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 60,
+      "original": "force.update",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 61,
+      "original": "ignore.horizon",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 62,
+      "original": "observe.horizon",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 63,
+      "original": "set.horizon",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 64,
+      "original": "object.on.water",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 65,
+      "original": "object.on.land",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 66,
+      "original": "object.on.anything",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 67,
+      "original": "ignore.objs",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 68,
+      "original": "observe.objs",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 69,
+      "original": "distance",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 70,
+      "original": "stop.cycling",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 71,
+      "original": "start.cycling",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 72,
+      "original": "normal.cycle",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 73,
+      "original": "end.of.loop",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 74,
+      "original": "reverse.cycle",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 75,
+      "original": "reverse.loop",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 76,
+      "original": "cycle.time",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 77,
+      "original": "stop.motion",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 78,
+      "original": "start.motion",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 79,
+      "original": "step.size",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 80,
+      "original": "step.time",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 81,
+      "original": "move.obj",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 82,
+      "original": "move.obj.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 83,
+      "original": "follow.ego",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 84,
+      "original": "wander",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 85,
+      "original": "normal.motion",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 86,
+      "original": "set.dir",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 87,
+      "original": "get.dir",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 88,
+      "original": "ignore.blocks",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 89,
+      "original": "observe.blocks",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 90,
+      "original": "block",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 91,
+      "original": "unblock",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 92,
+      "original": "get",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 93,
+      "original": "get.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 94,
+      "original": "drop",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 95,
+      "original": "put",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 96,
+      "original": "put.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 97,
+      "original": "get.room.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 98,
+      "original": "load.sound",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 99,
+      "original": "sound",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 100,
+      "original": "stop.sound",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 101,
+      "original": "print",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 102,
+      "original": "print.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 103,
+      "original": "display",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 104,
+      "original": "display.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 105,
+      "original": "clear.lines",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 106,
+      "original": "text.screen",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 107,
+      "original": "graphics",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 108,
+      "original": "set.cursor.char",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 109,
+      "original": "set.text.attribute",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 110,
+      "original": "shake.screen",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 111,
+      "original": "configure.screen",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 112,
+      "original": "status.line.on",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 113,
+      "original": "status.line.off",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 114,
+      "original": "set.string",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 115,
+      "original": "get.string",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 116,
+      "original": "word.to.string",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 117,
+      "original": "parse",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 118,
+      "original": "get.num",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 119,
+      "original": "prevent.input",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 120,
+      "original": "accept.input",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 121,
+      "original": "set.key",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 122,
+      "original": "add.to.pic",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 123,
+      "original": "add.to.pic.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 124,
+      "original": "status",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 125,
+      "original": "save.game",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 126,
+      "original": "restore.game",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 127,
+      "original": "init.disk",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 128,
+      "original": "restart.game",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 129,
+      "original": "show.obj",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 130,
+      "original": "random",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 131,
+      "original": "program.control",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 132,
+      "original": "player.control",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 133,
+      "original": "obj.status.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 134,
+      "original": "quit",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 135,
+      "original": "show.mem",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 136,
+      "original": "pause",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 137,
+      "original": "echo.line",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 138,
+      "original": "cancel.line",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 139,
+      "original": "init.joy",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 140,
+      "original": "toggle.monitor",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 141,
+      "original": "version",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 142,
+      "original": "script.size",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 143,
+      "original": "set.game.id",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 144,
+      "original": "log",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 145,
+      "original": "set.scan.start",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 146,
+      "original": "reset.scan.start",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 147,
+      "original": "reposition.to",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 148,
+      "original": "reposition.to.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 149,
+      "original": "trace.on",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 150,
+      "original": "trace.info",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 151,
+      "original": "print.at",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 152,
+      "original": "print.at.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 153,
+      "original": "discard.view.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 154,
+      "original": "clear.text.rect",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 155,
+      "original": "set.upper.left",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 156,
+      "original": "set.menu",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 157,
+      "original": "set.menu.item",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 158,
+      "original": "submit.menu",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 159,
+      "original": "enable.item",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 160,
+      "original": "disable.item",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 161,
+      "original": "menu.input",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 162,
+      "original": "show.obj.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 163,
+      "original": "open.dialogue",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 164,
+      "original": "close.dialogue",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 165,
+      "original": "mul.n",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 166,
+      "original": "mul.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 167,
+      "original": "div.n",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 168,
+      "original": "div.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 169,
+      "original": "close.window",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 221,
+      "original": "equaln",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 222,
+      "original": "equalv",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 223,
+      "original": "lessn",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 224,
+      "original": "lessv",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 225,
+      "original": "greatern",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 226,
+      "original": "greaterv",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 227,
+      "original": "isset",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 228,
+      "original": "isset.v",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 229,
+      "original": "has",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 230,
+      "original": "obj.in.room",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 231,
+      "original": "posn",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 232,
+      "original": "controller",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 233,
+      "original": "have.key",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 234,
+      "original": "said",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 235,
+      "original": "compare.strings",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 236,
+      "original": "obj.in.box",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 237,
+      "original": "center.posn",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "95.agilogic",
+      "messageNumber": 238,
+      "original": "right.posn",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 1,
+      "original": "discard.view(%v18):%m30",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v",
+        "%m30"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 2,
+      "original": "set.view(%v18,_):%m26",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v",
+        "%m26"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 3,
+      "original": "set.view(_,%v18):%m30",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v",
+        "%m30"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 4,
+      "original": "set.loop(%v18,_):%m26",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v",
+        "%m26"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 5,
+      "original": "set.loop(%v18,_):\\nBad loop #.%m25",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v",
+        "%m25"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 6,
+      "original": "set.loop(%v18,_):%m31",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v",
+        "%m31"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 7,
+      "original": "set.cel(%v18,_):%m26",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v",
+        "%m26"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 8,
+      "original": "set.cel(%v18,_):\\nBad cel #.%m25",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v",
+        "%m25"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 9,
+      "original": "sound(%v18):\\nSound not loaded.%m25",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v",
+        "%m25"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 10,
+      "original": "set.cel(%v18,_):%m31",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v",
+        "%m31"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 11,
+      "original": "Script buffer overflow.\\nMaximum size = %v18%m25",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v",
+        "%m25"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 12,
+      "original": "erase(%v18):%m26",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v",
+        "%m26"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 13,
+      "original": "animate.obj(%v18):%m26",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v",
+        "%m26"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 14,
+      "original": "stop.update(%v18):%m28",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v",
+        "%m28"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 15,
+      "original": "Bad test: %v18%m25",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v",
+        "%m25"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 16,
+      "original": "Bad action: %v18%m25",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v",
+        "%m25"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 17,
+      "original": "start.update(%v18):%m28",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v",
+        "%m28"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 18,
+      "original": "draw.pic(%v18):%m32",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v",
+        "%m32"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 19,
+      "original": "draw(%v18):%m26",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v",
+        "%m26"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 20,
+      "original": "draw(%v18):%m31",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v",
+        "%m31"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 21,
+      "original": "discard.pic(%v18):%m32",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v",
+        "%m32"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 22,
+      "original": "",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 23,
+      "original": "get(%v18) or put(%v18):%m26",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v",
+        "%m26"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 25,
+      "original": "\\nPress ESC to quit.",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 26,
+      "original": "%m27.%m25",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%m27",
+        "%m25"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 27,
+      "original": "\\nBad object number",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 28,
+      "original": "%m27 or object not drawn.%m25",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%m27",
+        "%m25"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 29,
+      "original": "\\nView not ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 30,
+      "original": "%m29loaded.%m25",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%m29",
+        "%m25"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 31,
+      "original": "%m29set.%m25",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%m29",
+        "%m25"
+      ]
+    },
+    {
+      "logicFile": "98.agilogic",
+      "messageNumber": 32,
+      "original": "Picture not loaded.%m25",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%m25"
+      ]
+    },
+    {
+      "logicFile": "99.agilogic",
+      "messageNumber": 1,
+      "original": "Rm %v0|3 Pri %v255|2 x:%v253|3 y:%v254|3",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v"
+      ]
+    },
+    {
+      "logicFile": "99.agilogic",
+      "messageNumber": 2,
+      "original": "New priority: ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "99.agilogic",
+      "messageNumber": 3,
+      "original": "Invalid object number!",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "99.agilogic",
+      "messageNumber": 4,
+      "original": "Object %v255 is in your inventory.",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v"
+      ]
+    },
+    {
+      "logicFile": "99.agilogic",
+      "messageNumber": 5,
+      "original": "Object %v255 is in room %v254.",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v"
+      ]
+    },
+    {
+      "logicFile": "99.agilogic",
+      "messageNumber": 6,
+      "original": "Object number: ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "99.agilogic",
+      "messageNumber": 7,
+      "original": "You gottum!",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "99.agilogic",
+      "messageNumber": 8,
+      "original": "object number: ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "99.agilogic",
+      "messageNumber": 9,
+      "original": "object #: ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "99.agilogic",
+      "messageNumber": 10,
+      "original": "flag number: ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "99.agilogic",
+      "messageNumber": 11,
+      "original": "flag %v255 is set",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v"
+      ]
+    },
+    {
+      "logicFile": "99.agilogic",
+      "messageNumber": 12,
+      "original": "flag %v255 is not set",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v"
+      ]
+    },
+    {
+      "logicFile": "99.agilogic",
+      "messageNumber": 13,
+      "original": "var value: ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "99.agilogic",
+      "messageNumber": 14,
+      "original": "var number: ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "99.agilogic",
+      "messageNumber": 15,
+      "original": "var %v255: %v254",
+      "translation": "",
+      "notes": "",
+      "placeholders": [
+        "%v"
+      ]
+    },
+    {
+      "logicFile": "99.agilogic",
+      "messageNumber": 16,
+      "original": "y: ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "99.agilogic",
+      "messageNumber": 17,
+      "original": "x: ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    },
+    {
+      "logicFile": "99.agilogic",
+      "messageNumber": 18,
+      "original": "new room: ",
+      "translation": "",
+      "notes": "",
+      "placeholders": []
+    }
+  ]
+}

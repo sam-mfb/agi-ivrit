@@ -8,9 +8,9 @@ project/
 example/build/
 
 # Active translation working directory
-active-translation/
 
 # Ignore build output
 play-example
+play-build
 translation-review/node_modules/
 translation-review/dist/

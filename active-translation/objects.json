@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "metadata": {
+    "gameName": "",
+    "contentType": "objects",
+    "sourceLanguage": "en",
+    "targetLanguage": "",
+    "extractedDate": "2025-12-05T21:29:42.628Z",
+    "totalObjects": 1,
+    "maxAnimatedObjects": 16
+  },
+  "objects": [
+    {
+      "index": 1,
+      "original": "test object",
+      "translation": "",
+      "startingRoom": 255,
+      "notes": ""
+    }
+  ]
+}
