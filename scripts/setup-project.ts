@@ -28,7 +28,6 @@ log.emoji('🧹', 'Cleaning up old files...');
 removeDir('project/orig');
 removeDir('project/src');
 removeDir('project/build');
-removeDir('viewer/public/resources');
 
 // Extract ZIP to project/orig
 log.emoji('📦', 'Extracting game files...');
@@ -70,7 +69,3 @@ log.newline();
 exec('vite-node scripts/setup-agi.ts project');
 
 log.emoji('✅', 'Setup complete!');
-log.newline();
-log.info('You can now:');
-log.info('  • Run the viewer: npm run viewer:dev');
-log.info('  • Build the game: npm run build');

@@ -45,10 +45,4 @@ if (exists(`${dir}/agikit-project.json`)) {
   removeFile(`${dir}/agikit-project.json`);
 }
 
-// Remove viewer resources
-if (exists('viewer/public/resources')) {
-  log.step('Removing viewer/public/resources/...');
-  removeDir('viewer/public/resources');
-}
-
 log.newline();

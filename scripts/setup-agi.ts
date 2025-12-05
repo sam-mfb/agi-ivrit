@@ -1,5 +1,5 @@
 import { log } from './utils/logger.js';
-import { exists, ensureDir, copyDir } from './utils/fs-utils.js';
+import { exists, ensureDir } from './utils/fs-utils.js';
 import { exec } from './utils/exec-utils.js';
 
 // Usage: vite-node scripts/setup-agi.ts <directory>
@@ -40,16 +40,4 @@ log.newline();
 log.emoji('📁', 'Creating build directory...');
 ensureDir(`${dir}/build`);
 log.success(`Created ${dir}/build/`);
-log.newline();
-
-// Copy resources to viewer
-log.emoji('🖼️', ' Copying resources to viewer...');
-ensureDir('viewer/public/resources');
-copyDir(`${dir}/src`, 'viewer/public/resources');
-
-// Create manifest.json
-log.emoji('📋', 'Creating resource manifest...');
-exec('vite-node scripts/create-manifest.ts');
-
-log.success('Resources copied to viewer/public/resources/');
 log.newline();
