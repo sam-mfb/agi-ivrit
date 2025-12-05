@@ -7,6 +7,19 @@ if (f2 && (v9 == 0) && !f4) {
     v35 = 1;
   }
 
+  if (said("end")) {
+    load.view(12);
+    animate.obj(o1);
+    set.view(o1, 12);
+    set.loop(o1, 0);
+    set.cel(o1, 0);
+    stop.cycling(o1);
+    position(o1, 46, 123);
+    set.priority(o1, 15);
+    ignore.objs(o1);
+    draw(o1);
+  }
+
   if (said("examine", "test object")) {
     print("test object");
     get.num("test object", v255);

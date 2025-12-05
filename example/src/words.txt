@@ -22,6 +22,7 @@
 22: use
 30: "test object"
 31: die
+32: end
 1000: sp
 1001: tp
 1002: pos position
