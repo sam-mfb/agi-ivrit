@@ -11,6 +11,8 @@
     "rebuild-example:dev": "vite-node scripts/rebuild-example.ts play-example",
     "review:dev": "vite translation-review --config translation-review/vite.config.ts",
     "review:build": "vite build translation-review --config translation-review/vite.config.ts",
+    "decompile-view": "agikit decompile-view",
+    "decompile-pic": "agikit decompile-pic",
     "typecheck:scripts": "tsc --project scripts/tsconfig.json --noEmit",
     "test": "vitest",
     "test:ui": "vitest --ui"
