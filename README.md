@@ -110,11 +110,11 @@ Copy the completed `*.json` files from `active-translation/` into that subdirect
 
 | Directory | Contents |
 |-----------|----------|
-| `view/` | Decompiled agiview and agiviewdesc files. You can use agikit-slim to convert .agv files from WinAGI into these formats. |
-| `pic/` | Decompiled agipic files. You can use agikit-slim to convert .agp files from WinAGI into this format. |
+| `view/` | View files in `.agiview` (decompiled) or `.agv` (compiled WinAGI) format. Optional `.agiviewdesc` files for descriptions. Files can be named `12.agiview`, `View12.agv`, etc. |
+| `pic/` | Picture files in `.agipic` (decompiled) or `.agp` (compiled WinAGI) format. Files can be named `12.agipic`, `Pic12.agp`, `Picture12.agp`, etc. |
 | `logic/` | Patch files (.patch) that will patch .agilogic files. |
 
-[TODO: automate/simplify more?]
+Compiled WinAGI files (`.agv`, `.agp`) are automatically decompiled during the build process.
 
 ---
 
