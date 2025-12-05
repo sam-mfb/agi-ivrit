@@ -1,0 +1,11 @@
+--- project/tmp/src/logic/90.agilogic
++++ translations/example/logic/90.agilogic
+@@ -14,7 +14,7 @@
+     set.loop(o1, 0);
+     set.cel(o1, 0);
+     stop.cycling(o1);
+-    position(o1, 46, 123);
++    position(o1, 56, 123);
+     set.priority(o1, 15);
+     ignore.objs(o1);
+     draw(o1);
