@@ -1,12 +1,12 @@
 {
   "version": "1.0",
   "metadata": {
-    "gameName": "",
+    "gameName": "AGI Example",
     "contentType": "vocabulary",
     "sourceLanguage": "en",
-    "targetLanguage": "",
-    "extractedDate": "2025-12-05T21:29:42.628Z",
-    "totalWordGroups": 45
+    "targetLanguage": "he",
+    "extractedDate": "2025-12-04T00:32:01.782Z",
+    "totalWordGroups": 44
   },
   "vocabulary": [
     {
@@ -45,208 +45,198 @@
         "you"
       ],
       "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "wordType": "other",
+      "notes": "Filler words - AGI auto-generates Hebrew prefix variations"
     },
     {
       "wordNumber": 1,
       "word": "ANYWORD",
-      "originalSynonyms": [
-        "anyword"
-      ],
+      "originalSynonyms": ["anyword"],
       "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "wordType": "other",
+      "notes": "Special AGI keyword - do not translate"
     },
     {
       "wordNumber": 2,
       "word": "quit",
       "originalSynonyms": [],
-      "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "translatedSynonyms": ["צא", "יציאה", "לצאת"],
+      "wordType": "verb",
+      "notes": "Exit the game"
     },
     {
       "wordNumber": 3,
       "word": "restart",
       "originalSynonyms": [],
-      "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "translatedSynonyms": ["התחל", "מחדש", "להתחיל"],
+      "wordType": "verb",
+      "notes": "Restart the game"
     },
     {
       "wordNumber": 4,
       "word": "restore",
       "originalSynonyms": [],
-      "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "translatedSynonyms": ["שחזר", "טען", "לשחזר"],
+      "wordType": "verb",
+      "notes": "Restore saved game"
     },
     {
       "wordNumber": 5,
       "word": "save",
       "originalSynonyms": [],
-      "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "translatedSynonyms": ["שמור", "לשמור"],
+      "wordType": "verb",
+      "notes": "Save game"
     },
     {
       "wordNumber": 6,
       "word": "game",
       "originalSynonyms": [],
-      "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "translatedSynonyms": ["משחק"],
+      "wordType": "noun",
+      "notes": "Game noun"
     },
     {
       "wordNumber": 7,
       "word": "pause",
       "originalSynonyms": [],
-      "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "translatedSynonyms": ["השהה", "עצור", "להשהות"],
+      "wordType": "verb",
+      "notes": "Pause game"
     },
     {
       "wordNumber": 8,
       "word": "help",
       "originalSynonyms": [],
-      "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "translatedSynonyms": ["עזרה", "עזור"],
+      "wordType": "verb",
+      "notes": "Show help"
     },
     {
       "wordNumber": 9,
       "word": "slow",
       "originalSynonyms": [],
-      "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "translatedSynonyms": ["איטי", "לאט"],
+      "wordType": "other",
+      "notes": "Game speed setting"
     },
     {
       "wordNumber": 10,
       "word": "normal",
       "originalSynonyms": [],
-      "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "translatedSynonyms": ["רגיל"],
+      "wordType": "other",
+      "notes": "Game speed setting"
     },
     {
       "wordNumber": 11,
       "word": "fast",
       "originalSynonyms": [],
-      "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "translatedSynonyms": ["מהיר"],
+      "wordType": "other",
+      "notes": "Game speed setting"
     },
     {
       "wordNumber": 12,
       "word": "fastest",
       "originalSynonyms": [],
-      "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "translatedSynonyms": ["מהיר ביותר", "הכי מהיר"],
+      "wordType": "other",
+      "notes": "Game speed setting"
     },
     {
       "wordNumber": 13,
       "word": "speed",
       "originalSynonyms": [],
-      "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "translatedSynonyms": ["מהירות"],
+      "wordType": "noun",
+      "notes": "Game speed"
     },
     {
       "wordNumber": 14,
       "word": "y",
-      "originalSynonyms": [
-        "yes"
-      ],
-      "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "originalSynonyms": ["yes"],
+      "translatedSynonyms": ["כן", "כ"],
+      "wordType": "other",
+      "notes": "Yes confirmation"
     },
     {
       "wordNumber": 15,
       "word": "n",
-      "originalSynonyms": [
-        "no"
-      ],
-      "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "originalSynonyms": ["no"],
+      "translatedSynonyms": ["לא", "ל"],
+      "wordType": "other",
+      "notes": "No confirmation"
     },
     {
       "wordNumber": 16,
       "word": "on",
       "originalSynonyms": [],
-      "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "translatedSynonyms": ["דלוק", "פועל"],
+      "wordType": "other",
+      "notes": "Toggle on"
     },
     {
       "wordNumber": 18,
       "word": "clock",
       "originalSynonyms": [],
-      "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "translatedSynonyms": ["שעון"],
+      "wordType": "noun",
+      "notes": "Clock display toggle"
     },
     {
       "wordNumber": 19,
       "word": "inv",
-      "originalSynonyms": [
-        "inventory"
-      ],
-      "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "originalSynonyms": ["inventory"],
+      "translatedSynonyms": ["מלאי", "חפצים", "ציוד"],
+      "wordType": "noun",
+      "notes": "Show inventory"
     },
     {
       "wordNumber": 20,
       "word": "examine",
-      "originalSynonyms": [
-        "look"
-      ],
-      "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "originalSynonyms": ["look"],
+      "translatedSynonyms": ["הבט", "הסתכל", "בדוק", "ראה"],
+      "wordType": "verb",
+      "notes": "Look at something - standard Sierra verb"
     },
     {
       "wordNumber": 21,
       "word": "get",
       "originalSynonyms": [],
-      "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "translatedSynonyms": ["קח", "לקחת", "תקח", "השג"],
+      "wordType": "verb",
+      "notes": "Take/get item - standard Sierra verb"
     },
     {
       "wordNumber": 22,
       "word": "use",
       "originalSynonyms": [],
-      "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "translatedSynonyms": ["השתמש", "להשתמש"],
+      "wordType": "verb",
+      "notes": "Use item - standard Sierra verb"
     },
     {
       "wordNumber": 30,
       "word": "test object",
       "originalSynonyms": [],
-      "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "translatedSynonyms": ["פריט בדיקה", "חפץ בדיקה"],
+      "wordType": "noun",
+      "notes": "Example inventory object name"
     },
     {
       "wordNumber": 31,
       "word": "die",
       "originalSynonyms": [],
-      "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "translatedSynonyms": ["מות", "למות"],
+      "wordType": "verb",
+      "notes": "Debug command to kill character"
     },
     {
       "wordNumber": 32,
       "word": "end",
       "originalSynonyms": [],
-      "translatedSynonyms": [],
+      "translatedSynonyms": ["סוף"],
       "wordType": "",
       "notes": ""
     },
@@ -255,164 +245,160 @@
       "word": "sp",
       "originalSynonyms": [],
       "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "wordType": "other",
+      "notes": "Debug command - do not translate"
     },
     {
       "wordNumber": 1001,
       "word": "tp",
       "originalSynonyms": [],
       "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "wordType": "other",
+      "notes": "Debug teleport command - do not translate"
     },
     {
       "wordNumber": 1002,
       "word": "pos",
-      "originalSynonyms": [
-        "position"
-      ],
+      "originalSynonyms": ["position"],
       "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "wordType": "other",
+      "notes": "Debug position command - do not translate"
     },
     {
       "wordNumber": 1003,
       "word": "object",
       "originalSynonyms": [],
       "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "wordType": "other",
+      "notes": "Debug command - do not translate"
     },
     {
       "wordNumber": 1004,
       "word": "flag",
       "originalSynonyms": [],
       "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "wordType": "other",
+      "notes": "Debug command - do not translate"
     },
     {
       "wordNumber": 1005,
       "word": "mem",
       "originalSynonyms": [],
       "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "wordType": "other",
+      "notes": "Debug command - do not translate"
     },
     {
       "wordNumber": 1006,
       "word": "pri",
-      "originalSynonyms": [
-        "priority"
-      ],
+      "originalSynonyms": ["priority"],
       "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "wordType": "other",
+      "notes": "Debug command - do not translate"
     },
     {
       "wordNumber": 1007,
       "word": "var",
       "originalSynonyms": [],
       "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "wordType": "other",
+      "notes": "Debug command - do not translate"
     },
     {
       "wordNumber": 1010,
       "word": "reset",
       "originalSynonyms": [],
       "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "wordType": "other",
+      "notes": "Debug command - do not translate"
     },
     {
       "wordNumber": 1011,
       "word": "set",
       "originalSynonyms": [],
       "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "wordType": "other",
+      "notes": "Debug command - do not translate"
     },
     {
       "wordNumber": 1012,
       "word": "show",
       "originalSynonyms": [],
       "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "wordType": "other",
+      "notes": "Debug command - do not translate"
     },
     {
       "wordNumber": 1013,
       "word": "trace",
       "originalSynonyms": [],
       "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "wordType": "other",
+      "notes": "Debug command - do not translate"
     },
     {
       "wordNumber": 1014,
       "word": "debug",
       "originalSynonyms": [],
       "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "wordType": "other",
+      "notes": "Debug command - do not translate"
     },
     {
       "wordNumber": 1015,
       "word": "room",
       "originalSynonyms": [],
       "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "wordType": "other",
+      "notes": "Debug command - do not translate"
     },
     {
       "wordNumber": 1016,
       "word": "drop",
       "originalSynonyms": [],
       "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "wordType": "other",
+      "notes": "Debug command - do not translate"
     },
     {
       "wordNumber": 1017,
       "word": "gimme",
       "originalSynonyms": [],
       "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "wordType": "other",
+      "notes": "Debug command - do not translate"
     },
     {
       "wordNumber": 1018,
       "word": "release",
       "originalSynonyms": [],
       "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "wordType": "other",
+      "notes": "Debug command - do not translate"
     },
     {
       "wordNumber": 1019,
       "word": "hide",
       "originalSynonyms": [],
       "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "wordType": "other",
+      "notes": "Debug command - do not translate"
     },
     {
       "wordNumber": 1020,
       "word": "coords",
       "originalSynonyms": [],
       "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "wordType": "other",
+      "notes": "Debug command - do not translate"
     },
     {
       "wordNumber": 9999,
       "word": "rol",
       "originalSynonyms": [],
       "translatedSynonyms": [],
-      "wordType": "",
-      "notes": ""
+      "wordType": "other",
+      "notes": "Debug command - do not translate"
     }
   ]
 }

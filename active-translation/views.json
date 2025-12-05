@@ -1,19 +1,19 @@
 {
   "version": "1.0",
   "metadata": {
-    "gameName": "",
+    "gameName": "AGI Example",
     "contentType": "views",
     "sourceLanguage": "en",
-    "targetLanguage": "",
-    "extractedDate": "2025-12-05T21:29:42.628Z",
+    "targetLanguage": "he",
+    "extractedDate": "2025-12-04T00:32:01.782Z",
     "totalViews": 1
   },
   "views": [
     {
       "viewNumber": 101,
       "original": "This is a test inventory object used for demonstrating view description extraction.",
-      "translation": "",
-      "notes": ""
+      "translation": "זהו פריט מלאי לדוגמה המשמש להדגמת חילוץ תיאורי תצוגה.",
+      "notes": "Example inventory item description for demonstration"
     }
   ]
 }

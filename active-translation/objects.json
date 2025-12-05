@@ -1,11 +1,11 @@
 {
   "version": "1.0",
   "metadata": {
-    "gameName": "",
+    "gameName": "AGI Example",
     "contentType": "objects",
     "sourceLanguage": "en",
-    "targetLanguage": "",
-    "extractedDate": "2025-12-05T21:29:42.628Z",
+    "targetLanguage": "he",
+    "extractedDate": "2025-12-04T00:32:01.782Z",
     "totalObjects": 1,
     "maxAnimatedObjects": 16
   },
@@ -13,9 +13,9 @@
     {
       "index": 1,
       "original": "test object",
-      "translation": "",
+      "translation": "פריט בדיקה",
       "startingRoom": 255,
-      "notes": ""
+      "notes": "Example inventory item"
     }
   ]
 }
