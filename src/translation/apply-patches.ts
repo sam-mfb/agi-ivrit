@@ -8,7 +8,7 @@ import { join, resolve } from 'path';
  * Looks for .patch files in translationsDir/logic/ and applies them
  * to the corresponding files in finalSrcDir/logic/
  *
- * @param translationsDir - Directory containing translation files (e.g., translations/sq2)
+ * @param translationsDir - Directory containing translation files (e.g., translations/example)
  * @param finalSrcDir - Directory containing final source files (e.g., project/final/src)
  * @returns Statistics about patches applied
  */

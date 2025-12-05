@@ -446,7 +446,7 @@ const translationSubdir = process.argv[3]; // Optional
 if (!projectDir) {
   log.error('Usage: vite-node scripts/import-translations.ts <project-directory> [translation-subdir]');
   log.error('Example: vite-node scripts/import-translations.ts project');
-  log.error('Example: vite-node scripts/import-translations.ts project sq2');
+  log.error('Example: vite-node scripts/import-translations.ts project example');
   process.exit(1);
 }
 

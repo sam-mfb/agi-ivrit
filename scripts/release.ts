@@ -13,7 +13,6 @@ const translationSubdir = process.argv[2];
 
 if (!translationSubdir) {
   log.error('Usage: vite-node scripts/release.ts <translation-subdir>');
-  log.error('Example: vite-node scripts/release.ts sq2');
   log.error('Example: vite-node scripts/release.ts example');
   process.exit(1);
 }

@@ -100,7 +100,7 @@ function fixTranslationFile(filePath: string, dryRun: boolean): { checked: numbe
 
 // Parse command line arguments
 const projectDir = process.argv[2] || 'project';
-const translationSubdir = process.argv[3] || 'sq2';
+const translationSubdir = process.argv[3] || 'example';
 const dryRun = process.argv.includes('--dry-run');
 
 const projectName = projectDir.split('/').pop() || projectDir;
@@ -132,5 +132,5 @@ log.newline();
 if (!dryRun && fixed > 0) {
   log.info('Next steps:');
   log.info('1. Review changes: git diff translations/');
-  log.info('2. Test build: npm run release:dev sq2');
+  log.info('2. Test build: npm run release:dev example');
 }
