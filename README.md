@@ -165,3 +165,21 @@ This does all of the above except instead of zipping it up it just copies the fi
 ### 6. Releasing
 
 TODO: Creating patches and modifying ScummVM detection_tables
+
+---
+
+## Available Translations
+
+Translations are maintained in separate repositories. To use one:
+
+1. Clone this repo and run `npm install`
+2. Fetch the translation: `npm run fetch-translation <name>`
+3. Put your legally-acquired game zip in `project/`
+4. Run `npm run init-translations`
+5. Run `npm run release <name>`
+
+| Game | Repo | Status |
+|------|------|--------|
+| Space Quest II | [agi-ivrit-sq2](https://github.com/sam-mfb/agi-ivrit-sq2) | In progress |
+
+> **Note:** The `example` translation is included in this repo for demonstration purposes.

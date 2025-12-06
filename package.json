@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "fetch-translation": "vite-node scripts/fetch-translation.ts",
     "init-translations": "vite-node scripts/init-translations.ts",
     "extract-translations": "vite-node scripts/extract-translations.ts",
     "release": "vite-node scripts/release.ts",
