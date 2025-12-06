@@ -185,3 +185,15 @@ Translations are maintained in separate repositories. To use one:
 | Space Quest II | [agi-ivrit-sq2](https://github.com/sam-mfb/agi-ivrit-sq2) | In progress |
 
 > **Note:** The `example` translation is included in this repo for demonstration purposes.
+
+### Publishing a Review App
+
+If you're maintaining a translation repo, you can automatically publish the review app to GitHub Pages so collaborators can view and discuss translations online.
+
+```bash
+npm run install-review-workflow <name>
+```
+
+For example: `npm run install-review-workflow sq2`
+
+This installs a GitHub Actions workflow into the translation repo. After committing and pushing, go to the repo's Settings → Pages and set the source to "GitHub Actions". The review app will then deploy automatically on each push.
