@@ -161,6 +161,12 @@ const translationsSlice = createSlice({
     resetViews: (state) => {
       state.views = { ...initialDataState };
     },
+    resetAll: (state) => {
+      state.messages = { ...initialDataState };
+      state.objects = { ...initialDataState };
+      state.vocabulary = { ...initialDataState };
+      state.views = { ...initialDataState };
+    },
   },
   extraReducers: (builder) => {
     // Messages
@@ -243,6 +249,7 @@ export const {
   resetObjects,
   resetVocabulary,
   resetViews,
+  resetAll,
 } = translationsSlice.actions;
 
 export default translationsSlice.reducer;
