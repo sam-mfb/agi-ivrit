@@ -16,6 +16,7 @@ describe('extractVocabulary', () => {
       word: 'a',
       originalSynonyms: ['an', 'the'],
       translatedSynonyms: [],
+      wordType: '',
       notes: ''
     });
 
@@ -24,6 +25,7 @@ describe('extractVocabulary', () => {
       word: 'look',
       originalSynonyms: ['examine'],
       translatedSynonyms: [],
+      wordType: '',
       notes: ''
     });
 
@@ -32,6 +34,7 @@ describe('extractVocabulary', () => {
       word: 'get',
       originalSynonyms: ['take', 'pick up'],
       translatedSynonyms: [],
+      wordType: '',
       notes: ''
     });
   });
