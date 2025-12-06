@@ -13,7 +13,6 @@ example/build/
 play-example
 play-build
 translation-review/node_modules/
-translation-review/package-lock.json
 translation-review/dist/
 
 # Ignore fetched translations (only example is committed)
