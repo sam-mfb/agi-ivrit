@@ -1,9 +1,14 @@
 {
   "translations": {
+    "sq1": {
+      "name": "Space Quest I",
+      "repo": "https://github.com/sam-mfb/agi-ivrit-sq1",
+      "status": "in-progress"
+    },
     "sq2": {
       "name": "Space Quest II",
       "repo": "https://github.com/sam-mfb/agi-ivrit-sq2",
-      "status": "in-progress"
+      "status": "completed"
     }
   }
 }
