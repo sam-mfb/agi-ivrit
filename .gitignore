@@ -14,3 +14,7 @@ play-example
 play-build
 translation-review/node_modules/
 translation-review/dist/
+
+# Ignore fetched translations (only example is committed)
+translations/*
+!translations/example/
