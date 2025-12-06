@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/agi-ivrit/',
+  base: process.env.VITE_BASE || '/agi-ivrit/',
   resolve: {
     alias: {
       '@': '/src',

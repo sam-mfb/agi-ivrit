@@ -5,9 +5,12 @@ import { VocabularyTable } from '@/features/translations/VocabularyTable';
 import { ViewsTable } from '@/features/translations/ViewsTable';
 import './App.css';
 
+// Use VITE_BASE env var if set, otherwise default to /agi-ivrit
+const basename = (import.meta.env.VITE_BASE || '/agi-ivrit').replace(/\/$/, '');
+
 function App() {
   return (
-    <BrowserRouter basename="/agi-ivrit">
+    <BrowserRouter basename={basename}>
       <div className="app">
         <header className="app-header">
           <h1>בדיקת תרגום</h1>

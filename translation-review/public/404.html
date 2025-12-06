@@ -6,7 +6,7 @@
     <script>
       // GitHub Pages SPA redirect hack
       // Redirect to index.html with the path as a query parameter
-      var pathSegmentsToKeep = 1; // Keep /agi-ivrit/
+      var pathSegmentsToKeep = 1; // Keep first path segment (e.g., /agi-ivrit/ or /agi-ivrit-sq2/)
       var l = window.location;
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
