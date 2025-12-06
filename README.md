@@ -19,6 +19,8 @@ The key changes from those projects are:
 
 Here's how to translate an AGI game.
 
+> **Note:** If you're continuing work on an existing translation, run `npm run fetch-translation <name>` first (e.g., `npm run fetch-translation sq2`) to pull it down, then skip to the release step.
+
 - Start with all the original AGI files in a zip folder. You can use the `example.zip` file in `example/` if you are just experimenting
 - Copy it to project/
 - Run `npm run init-translations`
@@ -122,7 +124,7 @@ This will launch a web server that provides a friendly UI for writing your trans
 
 Using WinAGI or your other tool of choice, create the modified PIC, VIEW, and LOGIC files you need for your translated game to work.
 
-When ready, create a subdirectory for your game in the `translations/` folder.
+When ready, create a subdirectory for your game in the `translations/` folder. If you plan to share your translation, create it as a separate git repo (e.g., `agi-ivrit-sq2`) and submit a PR to this repo to add it to `translations.json` and the Available Translations table in this README.
 
 Copy the completed `*.json` files from `active-translation/` into that subdirectory. Also create `view/`, `pic/`, and `logic/` subdirectories which contain:
 
