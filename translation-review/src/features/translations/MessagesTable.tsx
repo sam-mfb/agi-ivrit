@@ -1,8 +1,8 @@
 import { useEffect, useState, useMemo, useRef } from 'react';
-import { List, useListRef } from 'react-window';
+import { List } from 'react-window';
 import { useAppDispatch, useAppSelector } from '@/app/hooks';
 import { loadMessages, resetMessages } from './translationsSlice';
-import { MessageRow } from './MessageRow';
+import { MessageRow, type MessageRowExtraProps } from './MessageRow';
 import type { TranslationMessage } from '@/types/translations';
 import './MessagesTable.css';
 
@@ -15,7 +15,7 @@ export function MessagesTable() {
   const { data, loading, loaded, error } = useAppSelector((state) => state.translations.messages);
   const [logicFileFilter, setLogicFileFilter] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const listRef = useListRef();
+  const listRef = useRef<{ scrollToRow: (config: { index: number; behavior?: 'auto' | 'smooth' }) => void } | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [listHeight, setListHeight] = useState(DEFAULT_LIST_HEIGHT);
 
@@ -26,9 +26,9 @@ export function MessagesTable() {
   }, [loaded, loading, dispatch]);
 
   // Get unique logic files for the filter dropdown
-  const logicFiles = useMemo(() => {
+  const logicFiles = useMemo((): string[] => {
     if (!data) return [];
-    const files = new Set(data.messages.map((m: TranslationMessage) => m.logicFile));
+    const files = new Set<string>(data.messages.map((m: TranslationMessage) => m.logicFile));
     return Array.from(files).sort();
   }, [data]);
 
@@ -153,7 +153,7 @@ export function MessagesTable() {
               onChange={(e) => setLogicFileFilter(e.target.value)}
             >
               <option value="">הכל</option>
-              {logicFiles.map((file) => (
+              {logicFiles.map((file: string) => (
                 <option key={file} value={file}>
                   {file}
                 </option>
@@ -182,10 +182,11 @@ export function MessagesTable() {
       </div>
 
       {/* Virtual List */}
-      <List
-        listRef={listRef}
+      <List<MessageRowExtraProps>
+        ref={listRef}
         rowCount={filteredMessages.length}
         rowHeight={ROW_HEIGHT}
+        // @ts-expect-error - react-window types don't fully support React 19 memo components
         rowComponent={MessageRow}
         rowProps={{ messages: filteredMessages, searchQuery }}
         overscanCount={OVERSCAN_COUNT}

@@ -53,7 +53,7 @@ export function VocabularyTable() {
 
       if (newWord) {
         // Get current vocab item
-        const vocab = data?.vocabulary.find((v) => v.wordNumber === wordNumber);
+        const vocab = data?.vocabulary.find((v: TranslationVocabulary) => v.wordNumber === wordNumber);
         if (vocab) {
           // Add new word to existing synonyms
           const updatedSynonyms = [...vocab.translatedSynonyms, newWord];
@@ -72,9 +72,9 @@ export function VocabularyTable() {
   };
 
   const handleRemoveSynonym = (wordNumber: number, synonymIndex: number) => {
-    const vocab = data?.vocabulary.find((v) => v.wordNumber === wordNumber);
+    const vocab = data?.vocabulary.find((v: TranslationVocabulary) => v.wordNumber === wordNumber);
     if (vocab) {
-      const updatedSynonyms = vocab.translatedSynonyms.filter((_, idx) => idx !== synonymIndex);
+      const updatedSynonyms = vocab.translatedSynonyms.filter((_: string, idx: number) => idx !== synonymIndex);
       dispatch(
         updateVocabularyTranslatedSynonyms({
           wordNumber,

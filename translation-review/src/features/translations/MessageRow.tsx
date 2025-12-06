@@ -1,19 +1,17 @@
-import { memo, useState, useEffect, useCallback, CSSProperties, ReactNode } from 'react';
+import { memo, useState, useEffect, useCallback, ReactNode } from 'react';
 import { useAppDispatch } from '@/app/hooks';
 import { updateMessageTranslation, updateMessageNotes } from './translationsSlice';
 import type { TranslationMessage } from '@/types/translations';
+import type { RowComponentProps } from 'react-window';
 
-interface MessageRowProps {
-  ariaAttributes: {
-    'aria-posinset': number;
-    'aria-setsize': number;
-    role: 'listitem';
-  };
-  index: number;
-  style: CSSProperties;
+// Extra props passed via rowProps
+export interface MessageRowExtraProps {
   messages: TranslationMessage[];
   searchQuery: string;
 }
+
+// Full props including what react-window provides
+type MessageRowProps = RowComponentProps<MessageRowExtraProps>;
 
 // Escape special regex characters
 function escapeRegex(str: string): string {
@@ -77,7 +75,7 @@ export const MessageRow = memo(function MessageRow({
     }
   }, [dispatch, message, localNotes]);
 
-  if (!message) return null;
+  if (!message) return <div style={style} />;
 
   return (
     <div {...ariaAttributes} style={style} className="virtual-row">
