@@ -10,6 +10,8 @@ example/build/
 # Active translation working directory
 
 # Ignore build output
+play-example/
+play-build/
 play-example
 play-build
 translation-review/node_modules/
