@@ -1,19 +1,133 @@
 {
   "version": "1.0",
   "metadata": {
-    "gameName": "AGI Example",
+    "gameName": "",
     "contentType": "views",
     "sourceLanguage": "en",
-    "targetLanguage": "he",
-    "extractedDate": "2025-12-04T00:32:01.782Z",
-    "totalViews": 1
+    "targetLanguage": "",
+    "extractedDate": "2025-12-07T00:06:01.550Z",
+    "totalViews": 20
   },
   "views": [
     {
-      "viewNumber": 101,
-      "original": "This is a test inventory object used for demonstrating view description extraction.",
-      "translation": "זהו פריט מלאי לדוגמה המשמש להדגמת חילוץ תיאורי תצוגה.",
-      "notes": "Example inventory item description for demonstration"
+      "viewNumber": 186,
+      "original": "This is your survival kit. It formerly contained a Xenon Army Knife and a can of dehydrated water.",
+      "translation": "",
+      "notes": ""
+    },
+    {
+      "viewNumber": 199,
+      "original": "Written on the electronic gadget are the words DIALECT TRANSLATOR. On one end is a dial and a light (currently on).",
+      "translation": "",
+      "notes": ""
+    },
+    {
+      "viewNumber": 215,
+      "original": "This is a data storage cartridge. On it are the words ASTRAL BODY FORMATION: THE UNTOLD STORY.",
+      "translation": "",
+      "notes": ""
+    },
+    {
+      "viewNumber": 216,
+      "original": "This is definitely a rock.",
+      "translation": "",
+      "notes": ""
+    },
+    {
+      "viewNumber": 217,
+      "original": "Written on the electronic gadget are the words DIALECT TRANSLATOR. On one end is a dial and a light (currently dim).",
+      "translation": "",
+      "notes": ""
+    },
+    {
+      "viewNumber": 218,
+      "original": "The Orat part seems to consist of a spiny piece of bone with a small amount of somewhat less solid material clinging to one end.",
+      "translation": "",
+      "notes": ""
+    },
+    {
+      "viewNumber": 219,
+      "original": "The keycard is a flat rectangular piece of synthetic material which is magnetically keyed for passing check stations. Written in tiny letters are the words ``Beek and Hinder Security Systems''.",
+      "translation": "",
+      "notes": ""
+    },
+    {
+      "viewNumber": 220,
+      "original": "This is a piece of highly reflective view shield glass from the escape pod. Due to its special design there are no sharp edges.",
+      "translation": "",
+      "notes": ""
+    },
+    {
+      "viewNumber": 221,
+      "original": "This is the power key to the sand skimmer.",
+      "translation": "",
+      "notes": ""
+    },
+    {
+      "viewNumber": 222,
+      "original": "This is a vessel of that acrid-yet-buoyant Keronian Ale.",
+      "translation": "",
+      "notes": ""
+    },
+    {
+      "viewNumber": 223,
+      "original": "This is your bargain jetpack.",
+      "translation": "",
+      "notes": ""
+    },
+    {
+      "viewNumber": 224,
+      "original": "The buckazoid is a flat piece of a precious alien metal. You have %v124 of them.",
+      "translation": "",
+      "notes": ""
+    },
+    {
+      "viewNumber": 225,
+      "original": "This is your survival kit. It contains a Xenon Army Knife and a can of dehydrated water.",
+      "translation": "",
+      "notes": ""
+    },
+    {
+      "viewNumber": 226,
+      "original": "This is a cylinder of dehydrated water. At the top of the cylinder is a regulator and a short nozzle. On the side is a label.",
+      "translation": "",
+      "notes": ""
+    },
+    {
+      "viewNumber": 227,
+      "original": "This is a Sarien ID card. The name on the card is Butston Freem. You wonder if this is a common Sarien name.",
+      "translation": "",
+      "notes": ""
+    },
+    {
+      "viewNumber": 228,
+      "original": "This small item is a Pulseray. It delivers concentrated pulses of energy in the direction it is pointed.",
+      "translation": "",
+      "notes": ""
+    },
+    {
+      "viewNumber": 229,
+      "original": "The smoke bomb appears to be of the impact detonation variety. You don't want to be to close to this thing when it discharges.",
+      "translation": "",
+      "notes": ""
+    },
+    {
+      "viewNumber": 230,
+      "original": "This is a small remote control unit. On it is a button. You wonder what it controls remotely.",
+      "translation": "",
+      "notes": ""
+    },
+    {
+      "viewNumber": 232,
+      "original": "It is a plant you are not familiar with.",
+      "translation": "",
+      "notes": ""
+    },
+    {
+      "viewNumber": 233,
+      "original": "This is your handy-dandy Xenon Army Knife.",
+      "translation": "",
+      "notes": ""
     }
   ]
 }

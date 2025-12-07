@@ -1,21 +1,182 @@
 {
   "version": "1.0",
   "metadata": {
-    "gameName": "AGI Example",
+    "gameName": "",
     "contentType": "objects",
     "sourceLanguage": "en",
-    "targetLanguage": "he",
-    "extractedDate": "2025-12-04T00:32:01.782Z",
-    "totalObjects": 1,
-    "maxAnimatedObjects": 16
+    "targetLanguage": "",
+    "extractedDate": "2025-12-07T00:06:01.550Z",
+    "totalObjects": 24,
+    "maxAnimatedObjects": 17
   },
   "objects": [
     {
+      "index": 0,
+      "original": "dummy",
+      "translation": "",
+      "startingRoom": 0,
+      "notes": ""
+    },
+    {
       "index": 1,
-      "original": "test object",
-      "translation": "פריט בדיקה",
-      "startingRoom": 255,
-      "notes": "Example inventory item"
+      "original": "Cartridge",
+      "translation": "",
+      "startingRoom": 0,
+      "notes": ""
+    },
+    {
+      "index": 2,
+      "original": "Rock",
+      "translation": "",
+      "startingRoom": 0,
+      "notes": ""
+    },
+    {
+      "index": 3,
+      "original": "Gadget",
+      "translation": "",
+      "startingRoom": 0,
+      "notes": ""
+    },
+    {
+      "index": 4,
+      "original": "Orat Part",
+      "translation": "",
+      "startingRoom": 0,
+      "notes": ""
+    },
+    {
+      "index": 5,
+      "original": "Keycard",
+      "translation": "",
+      "startingRoom": 0,
+      "notes": ""
+    },
+    {
+      "index": 6,
+      "original": "Glass",
+      "translation": "",
+      "startingRoom": 0,
+      "notes": ""
+    },
+    {
+      "index": 7,
+      "original": "Skimmer key",
+      "translation": "",
+      "startingRoom": 0,
+      "notes": ""
+    },
+    {
+      "index": 8,
+      "original": "Beer",
+      "translation": "",
+      "startingRoom": 0,
+      "notes": ""
+    },
+    {
+      "index": 9,
+      "original": "Jetpack",
+      "translation": "",
+      "startingRoom": 0,
+      "notes": ""
+    },
+    {
+      "index": 10,
+      "original": "Buckazoid(s)",
+      "translation": "",
+      "startingRoom": 0,
+      "notes": ""
+    },
+    {
+      "index": 11,
+      "original": "Survival Kit",
+      "translation": "",
+      "startingRoom": 0,
+      "notes": ""
+    },
+    {
+      "index": 12,
+      "original": "Dehydrated Water",
+      "translation": "",
+      "startingRoom": 0,
+      "notes": ""
+    },
+    {
+      "index": 13,
+      "original": "Sarien ID card",
+      "translation": "",
+      "startingRoom": 0,
+      "notes": ""
+    },
+    {
+      "index": 14,
+      "original": "Pulseray",
+      "translation": "",
+      "startingRoom": 0,
+      "notes": ""
+    },
+    {
+      "index": 15,
+      "original": "Gas Grenade",
+      "translation": "",
+      "startingRoom": 0,
+      "notes": ""
+    },
+    {
+      "index": 16,
+      "original": "Remote Control",
+      "translation": "",
+      "startingRoom": 0,
+      "notes": ""
+    },
+    {
+      "index": 18,
+      "original": "Plant",
+      "translation": "",
+      "startingRoom": 0,
+      "notes": ""
+    },
+    {
+      "index": 19,
+      "original": "Xenon Army Knife",
+      "translation": "",
+      "startingRoom": 0,
+      "notes": ""
+    },
+    {
+      "index": 20,
+      "original": "Own 1 Used Ship",
+      "translation": "",
+      "startingRoom": 0,
+      "notes": ""
+    },
+    {
+      "index": 21,
+      "original": "Control",
+      "translation": "",
+      "startingRoom": 0,
+      "notes": ""
+    },
+    {
+      "index": 22,
+      "original": "Survival Kit",
+      "translation": "",
+      "startingRoom": 0,
+      "notes": ""
+    },
+    {
+      "index": 23,
+      "original": "Pocket Lint",
+      "translation": "",
+      "startingRoom": 0,
+      "notes": ""
+    },
+    {
+      "index": 24,
+      "original": "nothing",
+      "translation": "",
+      "startingRoom": 0,
+      "notes": ""
     }
   ]
 }
