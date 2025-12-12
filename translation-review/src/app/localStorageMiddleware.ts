@@ -1,6 +1,7 @@
 import type { Middleware } from '@reduxjs/toolkit';
 
-const STORAGE_KEY = 'translation-review-state';
+const BASE_PATH = import.meta.env.BASE_URL || '/';
+const STORAGE_KEY = `translation-review-state-${BASE_PATH.replace(/\//g, '')}`;
 let saveTimeout: NodeJS.Timeout | null = null;
 
 // Actions that should trigger persistence
