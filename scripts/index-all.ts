@@ -53,6 +53,14 @@ if (!existsSync(tmpDir)) {
 // Copy src to tmp/src
 cpSync(srcDir, tmpSrcDir, { recursive: true });
 log.info(`✓ Copied ${srcDir} to ${tmpSrcDir}`);
+
+// Copy agikit-project.json to tmp/
+const agikitProjectSrc = join(dir, 'agikit-project.json');
+const agikitProjectDest = join(tmpDir, 'agikit-project.json');
+if (existsSync(agikitProjectSrc)) {
+  cpSync(agikitProjectSrc, agikitProjectDest);
+  log.info(`✓ Copied agikit-project.json to ${tmpDir}`);
+}
 log.newline();
 
 // Step 1: Object indexing (now runs on tmp/src, overwrites in place)

@@ -53,6 +53,13 @@ function importTranslations(projectDir: string, translationSubdir?: string): voi
   cpSync(tmpSrcDir, finalSrcDir, { recursive: true });
   log.success('Source files copied');
 
+  // Copy agikit-project.json to final/
+  const agikitProjectSrc = join(projectDir, 'agikit-project.json');
+  const agikitProjectDest = join(finalDir, 'agikit-project.json');
+  if (existsSync(agikitProjectSrc)) {
+    cpSync(agikitProjectSrc, agikitProjectDest);
+  }
+
   // Apply logic patches (RTL coordinate adjustments)
   log.info('Applying logic patches...');
   const patchStats = applyLogicPatches(translationsDir, finalSrcDir);

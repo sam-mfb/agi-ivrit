@@ -5,177 +5,191 @@
     "contentType": "objects",
     "sourceLanguage": "en",
     "targetLanguage": "",
-    "extractedDate": "2025-12-07T00:06:01.550Z",
-    "totalObjects": 24,
-    "maxAnimatedObjects": 17
+    "extractedDate": "2025-12-22T15:09:28.773Z",
+    "totalObjects": 26,
+    "maxAnimatedObjects": 16
   },
   "objects": [
     {
       "index": 0,
-      "original": "dummy",
+      "original": "One Keycard",
       "translation": "",
-      "startingRoom": 0,
+      "startingRoom": 128,
       "notes": ""
     },
     {
       "index": 1,
-      "original": "Cartridge",
+      "original": "Two Keycards",
       "translation": "",
-      "startingRoom": 0,
+      "startingRoom": 128,
       "notes": ""
     },
     {
       "index": 2,
-      "original": "Rock",
+      "original": "Three Keycards",
       "translation": "",
-      "startingRoom": 0,
+      "startingRoom": 128,
       "notes": ""
     },
     {
       "index": 3,
-      "original": "Gadget",
+      "original": "Four Keycards",
       "translation": "",
-      "startingRoom": 0,
+      "startingRoom": 128,
       "notes": ""
     },
     {
       "index": 4,
-      "original": "Orat Part",
+      "original": "Five Keycards",
       "translation": "",
-      "startingRoom": 0,
+      "startingRoom": 128,
       "notes": ""
     },
     {
       "index": 5,
-      "original": "Keycard",
+      "original": "Six Keycards",
       "translation": "",
-      "startingRoom": 0,
+      "startingRoom": 128,
       "notes": ""
     },
     {
       "index": 6,
-      "original": "Glass",
+      "original": "Seven Keycards",
       "translation": "",
-      "startingRoom": 0,
+      "startingRoom": 128,
       "notes": ""
     },
     {
       "index": 7,
-      "original": "Skimmer key",
+      "original": "Eight Keycards",
       "translation": "",
-      "startingRoom": 0,
+      "startingRoom": 128,
       "notes": ""
     },
     {
       "index": 8,
-      "original": "Beer",
+      "original": "Nine Keycards",
       "translation": "",
-      "startingRoom": 0,
+      "startingRoom": 128,
       "notes": ""
     },
     {
       "index": 9,
-      "original": "Jetpack",
+      "original": "Ten Keycards",
       "translation": "",
-      "startingRoom": 0,
+      "startingRoom": 128,
       "notes": ""
     },
     {
       "index": 10,
-      "original": "Buckazoid(s)",
+      "original": "Eleven Keycards",
       "translation": "",
-      "startingRoom": 0,
+      "startingRoom": 128,
       "notes": ""
     },
     {
       "index": 11,
-      "original": "Survival Kit",
+      "original": "Twelve Keycards",
       "translation": "",
-      "startingRoom": 0,
+      "startingRoom": 128,
       "notes": ""
     },
     {
       "index": 12,
-      "original": "Dehydrated Water",
+      "original": "Thirteen Keycards",
       "translation": "",
-      "startingRoom": 0,
+      "startingRoom": 128,
       "notes": ""
     },
     {
       "index": 13,
-      "original": "Sarien ID card",
+      "original": "Medallion",
       "translation": "",
-      "startingRoom": 0,
+      "startingRoom": 128,
       "notes": ""
     },
     {
       "index": 14,
-      "original": "Pulseray",
+      "original": "MAD",
       "translation": "",
-      "startingRoom": 0,
+      "startingRoom": 117,
       "notes": ""
     },
     {
       "index": 15,
-      "original": "Gas Grenade",
+      "original": "Data Card",
       "translation": "",
-      "startingRoom": 0,
+      "startingRoom": 129,
       "notes": ""
     },
     {
       "index": 16,
-      "original": "Remote Control",
+      "original": "Module B",
       "translation": "",
-      "startingRoom": 0,
+      "startingRoom": 135,
       "notes": ""
     },
     {
       "index": 18,
-      "original": "Plant",
+      "original": "Crowbar",
       "translation": "",
-      "startingRoom": 0,
+      "startingRoom": 136,
       "notes": ""
     },
     {
       "index": 19,
-      "original": "Xenon Army Knife",
+      "original": "Stuffed Orb",
       "translation": "",
-      "startingRoom": 0,
+      "startingRoom": 129,
       "notes": ""
     },
     {
       "index": 20,
-      "original": "Own 1 Used Ship",
+      "original": "Key",
       "translation": "",
-      "startingRoom": 0,
-      "notes": ""
-    },
-    {
-      "index": 21,
-      "original": "Control",
-      "translation": "",
-      "startingRoom": 0,
+      "startingRoom": 106,
       "notes": ""
     },
     {
       "index": 22,
-      "original": "Survival Kit",
+      "original": "Module A",
       "translation": "",
-      "startingRoom": 0,
+      "startingRoom": 111,
       "notes": ""
     },
     {
       "index": 23,
-      "original": "Pocket Lint",
+      "original": "Module C",
       "translation": "",
-      "startingRoom": 0,
+      "startingRoom": 113,
       "notes": ""
     },
     {
       "index": 24,
-      "original": "nothing",
+      "original": "Module D",
       "translation": "",
-      "startingRoom": 0,
+      "startingRoom": 150,
+      "notes": ""
+    },
+    {
+      "index": 25,
+      "original": "Badges",
+      "translation": "",
+      "startingRoom": 145,
+      "notes": ""
+    },
+    {
+      "index": 26,
+      "original": "Stuffed Orbs",
+      "translation": "",
+      "startingRoom": 129,
+      "notes": ""
+    },
+    {
+      "index": 27,
+      "original": "Badge",
+      "translation": "",
+      "startingRoom": 145,
       "notes": ""
     }
   ]
