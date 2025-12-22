@@ -9,6 +9,11 @@
       "name": "Space Quest II",
       "repo": "https://github.com/sam-mfb/agi-ivrit-sq2",
       "status": "completed"
+    },
+    "mh1": {
+      "name": "Manhunter: New York",
+      "repo": "https://github.com/sam-mfb/agi-ivrit-mh1",
+      "status": "in-progress"
     }
   }
 }
