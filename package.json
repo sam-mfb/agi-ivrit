@@ -9,6 +9,8 @@
     "extract-translations": "vite-node scripts/extract-translations.ts",
     "release": "vite-node scripts/release.ts",
     "release:dev": "vite-node scripts/release-dev.ts",
+    "release:zip": "vite-node scripts/release-zip.ts",
+    "release:patch": "vite-node scripts/release-patch.ts",
     "rebuild-example": "vite-node scripts/rebuild-example.ts",
     "rebuild-example:dev": "vite-node scripts/rebuild-example.ts play-example",
     "review:dev": "vite translation-review --config translation-review/vite.config.ts",

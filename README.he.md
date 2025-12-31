@@ -33,8 +33,9 @@
 - העתיקו אותם ל-`translations/[subdir]` כאשר subdir הוא שם התיקייה שלכם
 - צרו קבצי pic, view ו-logic מותאמים באמצעות WinAGI או כלי אחר (ראו דוגמה ב-`translations/example`)
 - העתיקו את הקבצים המותאמים לתת-תיקיות המתאימות ב-`translations/[subdir]`
-- הריצו `npm run release [subdir]`
+- הריצו `npm run release:zip [subdir]`
 - המשחק המתורגם הסופי זמין ב-`project/final/agi-build.zip`
+- ליצירת קבצי patcher להפצה: שימו קודם את קבצי המשחק המקוריים ב-`project/orig/`, ואז הריצו `npm run release:patch [subdir]`
 - הוסיפו אותו ל-ScummVM כמשחק fan-made ובדקו. וודאו שהשפה מוגדרת לעברית ושמופעל WORDS.TOK.EXTENDED
 
 ---
@@ -144,33 +145,61 @@ npm run review:dev
 
 ### 5. בנייה מחדש
 
-הריצו:
+מספר פקודות בנייה זמינות:
 
-```bash
-npm run release <translation-name>
-```
-
-למשל: `npm run release example`
-
-זה ייבא את כל המחרוזות המתורגמות, יעתיק את הקבצים המותאמים, יחיל patches על קבצי logic, יעתיק פונט עברי, יקמפל מחדש את המשחק, ויארוז ל-zip.
-
-מזל טוב! עכשיו אמורה להיות לכם גרסה עברית של המשחק!
+| פקודה | מטרה |
+|-------|------|
+| `npm run release:dev <name>` | בנייה ל-`play-build/` לבדיקה ב-ScummVM |
+| `npm run release:zip <name>` | בנייה ויצירת zip ב-`project/final/agi-build.zip` |
+| `npm run release:patch <name>` | בנייה ויצירת קבצי patcher |
+| `npm run release <name> <version>` | בנייה, יצירת patchers, ופרסום release ב-GitHub |
 
 #### בניית פיתוח
-
-אפשר גם להריץ:
 
 ```bash
 npm run release:dev <translation-name>
 ```
 
-זה עושה את כל הנ"ל חוץ מאריזה - במקום זה מעתיק את הקבצים הסופיים לתיקיית `play-build/` בשורש הריפו (שמתעלמת על ידי git). שימושי כי אפשר פשוט להפנות את ScummVM לתיקייה הזו לפיתוח ובדיקה מהירים.
+זה מייבא תרגומים, בונה את המשחק, ומעתיק את הקבצים הסופיים ל-`play-build/` (שמתעלמת על ידי git). הפנו את ScummVM לתיקייה הזו לבדיקה מהירה.
+
+#### בניית zip
+
+```bash
+npm run release:zip <translation-name>
+```
+
+זה עושה את אותו הדבר אבל יוצר קובץ zip ב-`project/final/agi-build.zip` במקום.
 
 ---
 
 ### 6. שחרור
 
-TODO: יצירת patches ושינוי detection_tables של ScummVM
+להפצת התרגום, אפשר ליצור קבצי patcher חוצי-פלטפורמות שמשתמשים יכולים להריץ על קבצי המשחק שרכשו בחוקיות.
+
+#### דרישות מקדימות
+
+- שימו את קבצי המשחק המקוריים (לא מותאמים) ב-`project/orig/`
+- לפרסום releases: התקינו את [GitHub CLI](https://cli.github.com/) והתחברו עם `gh auth login`
+
+#### יצירת patchers (לבדיקה)
+
+```bash
+npm run release:patch <translation-name>
+```
+
+זה יוצר קבצי patcher לכל הפלטפורמות (Linux x64/arm64, macOS x64/arm64, Windows x64) ב-`project/patchers/`.
+
+#### פרסום release
+
+```bash
+npm run release <translation-name> <version>
+```
+
+למשל: `npm run release sq1 v1.0.0`
+
+זה בונה את ה-patchers ויוצר release ב-GitHub בריפו של התרגום (כפי שמוגדר ב-`translations.json`), ומעלה את כל קבצי ה-patcher כנכסים להורדה.
+
+משתמשים יכולים אז להוריד את ה-patcher המתאים לפלטפורמה שלהם ולהריץ אותו על תיקיית המשחק המקורית כדי להחיל את התרגום לעברית
 
 ---
 

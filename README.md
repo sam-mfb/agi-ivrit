@@ -33,8 +33,9 @@ Here's how to translate an AGI game.
 - Copy them in to translations/[subdir] where subdir is the name of your directory.
 - Make modified pic, view, and logic files using WinAGI or your favorite tool of choice (you can see an example of these in `translations/example`)
 - Copy those modified files to the appropriate subdirectories in translations/[subdir] (again, look at the example in `translations/example`)
-- Run `npm run release [subdir]` where subdir is the name of the subdir in translations/ where you copied all your jsons and other translation files
+- Run `npm run release:zip [subdir]` where subdir is the name of the subdir in translations/ where you copied all your jsons and other translation files
 - Your final translated game is now available in project/final/agi-build.zip
+- To create patcher executables for distribution: first place the original game files in `project/orig/`, then run `npm run release:patch [subdir]`
 - Add it to ScummVM as a fan made game and test it. Make sure to set the language to Hebrew and enable using WORDS.TOK.EXTENDED
 
 ## Overview of AGI Translation
@@ -142,33 +143,61 @@ Compiled WinAGI files (`.agv`, `.agp`) are automatically decompiled during the b
 
 ### 5. Rebuilding
 
-Run:
+Several build commands are available:
 
-```bash
-npm run release <translation-name>
-```
-
-For example: `npm run release example`
-
-This will import all the translated strings, copy over the modified files, patch the logic files, copy over a Hebrew font, recompile the game, and zip it into a zip file.
-
-Congratulations! You now should have a Hebrew version of your game!
+| Command | Purpose |
+|---------|---------|
+| `npm run release:dev <name>` | Build to `play-build/` for ScummVM testing |
+| `npm run release:zip <name>` | Build and create zip at `project/final/agi-build.zip` |
+| `npm run release:patch <name>` | Build and create patcher executables |
+| `npm run release <name> <version>` | Build, create patchers, and publish GitHub release |
 
 #### Development builds
-
-You can also run:
 
 ```bash
 npm run release:dev <translation-name>
 ```
 
-This does all of the above except instead of zipping it up it just copies the final files into the `play-build/` directory at the root of the repo (which is ignored by git). This is useful because you can just point ScummVM at this folder for rapid development and testing.
+This imports translations, builds the game, and copies the final files into `play-build/` (which is ignored by git). Point ScummVM at this folder for rapid testing.
+
+#### Zip builds
+
+```bash
+npm run release:zip <translation-name>
+```
+
+This does the same as above but creates a zip file at `project/final/agi-build.zip` instead.
 
 ---
 
 ### 6. Releasing
 
-TODO: Creating patches and modifying ScummVM detection_tables
+To distribute your translation, you can create cross-platform patcher executables that users can run on their legally-acquired game files.
+
+#### Prerequisites
+
+- Place the original (unmodified) game files in `project/orig/`
+- For publishing releases: install the [GitHub CLI](https://cli.github.com/) and authenticate with `gh auth login`
+
+#### Creating patchers (for testing)
+
+```bash
+npm run release:patch <translation-name>
+```
+
+This creates patcher executables for all platforms (Linux x64/arm64, macOS x64/arm64, Windows x64) in `project/patchers/`.
+
+#### Publishing a release
+
+```bash
+npm run release <translation-name> <version>
+```
+
+For example: `npm run release sq1 v1.0.0`
+
+This builds the patchers and creates a GitHub release in the translation's repository (as specified in `translations.json`), uploading all patcher executables as downloadable assets.
+
+Users can then download the appropriate patcher for their platform and run it on their original game directory to apply the Hebrew translation
 
 ---
 
