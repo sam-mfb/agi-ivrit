@@ -5,8 +5,129 @@
     "contentType": "views",
     "sourceLanguage": "en",
     "targetLanguage": "",
-    "extractedDate": "2025-12-22T15:09:28.773Z",
-    "totalViews": 0
+    "extractedDate": "2025-12-07T00:06:01.550Z",
+    "totalViews": 20
   },
-  "views": []
+  "views": [
+    {
+      "viewNumber": 186,
+      "original": "This is your survival kit. It formerly contained a Xenon Army Knife and a can of dehydrated water.",
+      "translation": "זוהי ערכת ההישרדות שלך. היא הכילה בעבר סכין צבא קסנון ופחית מים מיובשים.",
+      "notes": ""
+    },
+    {
+      "viewNumber": 199,
+      "original": "Written on the electronic gadget are the words DIALECT TRANSLATOR. On one end is a dial and a light (currently on).",
+      "translation": "כתוב על המכשיר האלקטרוני המילים \"מתרגם דיאלקטים\". בקצה אחד יש חוגה ונורה (דולקת כעת).",
+      "notes": ""
+    },
+    {
+      "viewNumber": 215,
+      "original": "This is a data storage cartridge. On it are the words ASTRAL BODY FORMATION: THE UNTOLD STORY.",
+      "translation": "זוהי מחסנית לאחסון נתונים. כתוב עליה המילים \"יצירת גוף אסטרלי: הסיפור שלא סופר\".",
+      "notes": ""
+    },
+    {
+      "viewNumber": 216,
+      "original": "This is definitely a rock.",
+      "translation": "זה בהחלט סלע.",
+      "notes": ""
+    },
+    {
+      "viewNumber": 217,
+      "original": "Written on the electronic gadget are the words DIALECT TRANSLATOR. On one end is a dial and a light (currently dim).",
+      "translation": "כתוב על המכשיר האלקטרוני המילים \"מתרגם דיאלקטים\". בקצה אחד יש חוגה ונורה (עמומה כעת).",
+      "notes": ""
+    },
+    {
+      "viewNumber": 218,
+      "original": "The Orat part seems to consist of a spiny piece of bone with a small amount of somewhat less solid material clinging to one end.",
+      "translation": "חלק האורט נראה כמורכב מחתיכת עצם קוצנית עם כמות קטנה של חומר פחות מוצק נצמד לקצה אחד.",
+      "notes": ""
+    },
+    {
+      "viewNumber": 219,
+      "original": "The keycard is a flat rectangular piece of synthetic material which is magnetically keyed for passing check stations. Written in tiny letters are the words ``Beek and Hinder Security Systems''.",
+      "translation": "הכרטיס המגנטי הוא חתיכה שטוחה מלבנית של חומר סינטטי אשר מקודד מגנטית למעבר בתחנות בקרה. כתוב באותיות זעירות המילים \"מערכות אבטחה ביק והינדר\".",
+      "notes": ""
+    },
+    {
+      "viewNumber": 220,
+      "original": "This is a piece of highly reflective view shield glass from the escape pod. Due to its special design there are no sharp edges.",
+      "translation": "זוהי חתיכת זכוכית מגן ראייה רפלקטיבית במיוחד מתרמיל המילוט. בשל העיצוב המיוחד שלה אין קצוות חדים.",
+      "notes": ""
+    },
+    {
+      "viewNumber": 221,
+      "original": "This is the power key to the sand skimmer.",
+      "translation": "זה מפתח ההפעלה לרחפן החול.",
+      "notes": ""
+    },
+    {
+      "viewNumber": 222,
+      "original": "This is a vessel of that acrid-yet-buoyant Keronian Ale.",
+      "translation": "זהו כלי של אותה בירה קרוניאנית חריפה-אך-עליזה.",
+      "notes": ""
+    },
+    {
+      "viewNumber": 223,
+      "original": "This is your bargain jetpack.",
+      "translation": "זה תרמיל הריחוף הזול שלך.",
+      "notes": ""
+    },
+    {
+      "viewNumber": 224,
+      "original": "The buckazoid is a flat piece of a precious alien metal. You have %v124 of them.",
+      "translation": "הבאקזואיד הוא חתיכה שטוחה של מתכת זרה יקרה. יש לך %v124 מהם.",
+      "notes": ""
+    },
+    {
+      "viewNumber": 225,
+      "original": "This is your survival kit. It contains a Xenon Army Knife and a can of dehydrated water.",
+      "translation": "זוהי ערכת ההישרדות שלך. היא מכילה סכין צבא קסנון ופחית מים מיובשים.",
+      "notes": ""
+    },
+    {
+      "viewNumber": 226,
+      "original": "This is a cylinder of dehydrated water. At the top of the cylinder is a regulator and a short nozzle. On the side is a label.",
+      "translation": "זהו גליל מים מיובשים. בחלק העליון של הגליל יש ווסת וזרבובית קצרה. בצד יש תווית.",
+      "notes": ""
+    },
+    {
+      "viewNumber": 227,
+      "original": "This is a Sarien ID card. The name on the card is Butston Freem. You wonder if this is a common Sarien name.",
+      "translation": "זה כרטיס זיהוי סריאני. השם על הכרטיס הוא בוטסטון פרים. אתה תוהה אם זה שם סריאני נפוץ.",
+      "notes": ""
+    },
+    {
+      "viewNumber": 228,
+      "original": "This small item is a Pulseray. It delivers concentrated pulses of energy in the direction it is pointed.",
+      "translation": "הפריט הקטן הזה הוא קרן פעימה. הוא משגר קרנים מרוכזים של אנרגיה בכיוון שאליו הוא מכוון.",
+      "notes": ""
+    },
+    {
+      "viewNumber": 229,
+      "original": "The smoke bomb appears to be of the impact detonation variety. You don't want to be to close to this thing when it discharges.",
+      "translation": "רימון הגז נראה מהזן של פיצוץ בפגיעה. אתה לא רוצה להיות קרוב מדי לדבר הזה כאשר הוא מתפוצץ.",
+      "notes": ""
+    },
+    {
+      "viewNumber": 230,
+      "original": "This is a small remote control unit. On it is a button. You wonder what it controls remotely.",
+      "translation": "זהו יחידת שלט רחוק קטנה. יש עליה כפתור. אתה תוהה מה הוא שולט בו מרחוק.",
+      "notes": ""
+    },
+    {
+      "viewNumber": 232,
+      "original": "It is a plant you are not familiar with.",
+      "translation": "זה צמח שאתה לא מכיר.",
+      "notes": ""
+    },
+    {
+      "viewNumber": 233,
+      "original": "This is your handy-dandy Xenon Army Knife.",
+      "translation": "זוהי סכין צבא קסנון השימושית שלך.",
+      "notes": ""
+    }
+  ]
 }

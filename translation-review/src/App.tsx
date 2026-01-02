@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, NavLink } from 'react-router-dom';
-import { useAppDispatch } from '@/app/hooks';
+import { useAppDispatch, useIsMobile } from '@/app/hooks';
 import { resetAll, loadMessages, loadObjects, loadVocabulary, loadViews } from '@/features/translations/translationsSlice';
 import { MessagesTable } from '@/features/translations/MessagesTable';
 import { ObjectsTable } from '@/features/translations/ObjectsTable';
@@ -12,6 +13,8 @@ const basename = (import.meta.env.VITE_BASE || '/agi-ivrit').replace(/\/$/, '');
 
 function AppContent() {
   const dispatch = useAppDispatch();
+  const isMobile = useIsMobile();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleResetAll = () => {
     if (confirm('לאפס את כל התרגומים לערכים המקוריים? לא ניתן לבטל פעולה זו.')) {
@@ -23,27 +26,49 @@ function AppContent() {
     }
   };
 
+  const handleNavClick = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <div className="app">
       <header className="app-header">
         <h1>בדיקת תרגום</h1>
-        <nav className="tab-navigation">
-          <NavLink to="/messages" className={({ isActive }) => (isActive ? 'tab active' : 'tab')}>
+        {isMobile && (
+          <div className="mobile-header-controls">
+            <button onClick={handleResetAll} className="reset-all-button">
+              איפוס הכל
+            </button>
+            <button
+              className={`hamburger-button ${menuOpen ? 'open' : ''}`}
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="תפריט"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        )}
+        <nav className={`tab-navigation ${menuOpen ? 'open' : ''}`}>
+          <NavLink to="/messages" className={({ isActive }) => (isActive ? 'tab active' : 'tab')} onClick={handleNavClick}>
             הודעות
           </NavLink>
-          <NavLink to="/objects" className={({ isActive }) => (isActive ? 'tab active' : 'tab')}>
+          <NavLink to="/objects" className={({ isActive }) => (isActive ? 'tab active' : 'tab')} onClick={handleNavClick}>
             פריטים
           </NavLink>
-          <NavLink to="/vocabulary" className={({ isActive }) => (isActive ? 'tab active' : 'tab')}>
+          <NavLink to="/vocabulary" className={({ isActive }) => (isActive ? 'tab active' : 'tab')} onClick={handleNavClick}>
             אוצר מילים
           </NavLink>
-          <NavLink to="/views" className={({ isActive }) => (isActive ? 'tab active' : 'tab')}>
+          <NavLink to="/views" className={({ isActive }) => (isActive ? 'tab active' : 'tab')} onClick={handleNavClick}>
             תיאורים
           </NavLink>
         </nav>
-        <button onClick={handleResetAll} className="reset-all-button">
-          איפוס הכל
-        </button>
+        {!isMobile && (
+          <button onClick={handleResetAll} className="reset-all-button">
+            איפוס הכל
+          </button>
+        )}
       </header>
 
       <main className="app-main">

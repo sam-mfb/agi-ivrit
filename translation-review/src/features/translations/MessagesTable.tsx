@@ -1,18 +1,21 @@
 import { useEffect, useState, useMemo, useRef } from 'react';
 import { List } from 'react-window';
-import { useAppDispatch, useAppSelector } from '@/app/hooks';
+import { useAppDispatch, useAppSelector, useIsMobile } from '@/app/hooks';
 import { loadMessages, resetMessages } from './translationsSlice';
 import { MessageRow, type MessageRowExtraProps } from './MessageRow';
 import type { TranslationMessage } from '@/types/translations';
 import './MessagesTable.css';
 
-const ROW_HEIGHT = 80;
+const DESKTOP_ROW_HEIGHT = 80;
+const MOBILE_ROW_HEIGHT = 440;
 const OVERSCAN_COUNT = 5;
 const DEFAULT_LIST_HEIGHT = 600;
 
 export function MessagesTable() {
   const dispatch = useAppDispatch();
   const { data, loading, loaded, error } = useAppSelector((state) => state.translations.messages);
+  const isMobile = useIsMobile();
+  const rowHeight = isMobile ? MOBILE_ROW_HEIGHT : DESKTOP_ROW_HEIGHT;
   const [logicFileFilter, setLogicFileFilter] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const listRef = useRef<{ scrollToRow: (config: { index: number; behavior?: 'auto' | 'smooth' }) => void } | null>(null);
@@ -185,7 +188,7 @@ export function MessagesTable() {
       <List<MessageRowExtraProps>
         ref={listRef}
         rowCount={filteredMessages.length}
-        rowHeight={ROW_HEIGHT}
+        rowHeight={rowHeight}
         // @ts-expect-error - react-window types don't fully support React 19 memo components
         rowComponent={MessageRow}
         rowProps={{ messages: filteredMessages, searchQuery }}

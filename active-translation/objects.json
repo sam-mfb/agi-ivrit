@@ -5,191 +5,177 @@
     "contentType": "objects",
     "sourceLanguage": "en",
     "targetLanguage": "",
-    "extractedDate": "2025-12-22T15:09:28.773Z",
-    "totalObjects": 26,
-    "maxAnimatedObjects": 16
+    "extractedDate": "2025-12-07T00:06:01.550Z",
+    "totalObjects": 24,
+    "maxAnimatedObjects": 17
   },
   "objects": [
     {
       "index": 0,
-      "original": "One Keycard",
-      "translation": "",
-      "startingRoom": 128,
+      "original": "dummy",
+      "translation": "דמה",
+      "startingRoom": 0,
       "notes": ""
     },
     {
       "index": 1,
-      "original": "Two Keycards",
-      "translation": "",
-      "startingRoom": 128,
+      "original": "Cartridge",
+      "translation": "מחסנית",
+      "startingRoom": 0,
       "notes": ""
     },
     {
       "index": 2,
-      "original": "Three Keycards",
-      "translation": "",
-      "startingRoom": 128,
+      "original": "Rock",
+      "translation": "סלע",
+      "startingRoom": 0,
       "notes": ""
     },
     {
       "index": 3,
-      "original": "Four Keycards",
-      "translation": "",
-      "startingRoom": 128,
+      "original": "Gadget",
+      "translation": "מכשיר",
+      "startingRoom": 0,
       "notes": ""
     },
     {
       "index": 4,
-      "original": "Five Keycards",
-      "translation": "",
-      "startingRoom": 128,
+      "original": "Orat Part",
+      "translation": "חלק אורט",
+      "startingRoom": 0,
       "notes": ""
     },
     {
       "index": 5,
-      "original": "Six Keycards",
-      "translation": "",
-      "startingRoom": 128,
+      "original": "Keycard",
+      "translation": "כרטיס מגנטי",
+      "startingRoom": 0,
       "notes": ""
     },
     {
       "index": 6,
-      "original": "Seven Keycards",
-      "translation": "",
-      "startingRoom": 128,
+      "original": "Glass",
+      "translation": "זכוכית",
+      "startingRoom": 0,
       "notes": ""
     },
     {
       "index": 7,
-      "original": "Eight Keycards",
-      "translation": "",
-      "startingRoom": 128,
+      "original": "Skimmer key",
+      "translation": "מפתח רחפן",
+      "startingRoom": 0,
       "notes": ""
     },
     {
       "index": 8,
-      "original": "Nine Keycards",
-      "translation": "",
-      "startingRoom": 128,
+      "original": "Beer",
+      "translation": "בירה",
+      "startingRoom": 0,
       "notes": ""
     },
     {
       "index": 9,
-      "original": "Ten Keycards",
-      "translation": "",
-      "startingRoom": 128,
+      "original": "Jetpack",
+      "translation": "תרמיל ריחוף",
+      "startingRoom": 0,
       "notes": ""
     },
     {
       "index": 10,
-      "original": "Eleven Keycards",
-      "translation": "",
-      "startingRoom": 128,
+      "original": "Buckazoid(s)",
+      "translation": "באקזואיד(ים)",
+      "startingRoom": 0,
       "notes": ""
     },
     {
       "index": 11,
-      "original": "Twelve Keycards",
-      "translation": "",
-      "startingRoom": 128,
+      "original": "Survival Kit",
+      "translation": "ערכת הישרדות",
+      "startingRoom": 0,
       "notes": ""
     },
     {
       "index": 12,
-      "original": "Thirteen Keycards",
-      "translation": "",
-      "startingRoom": 128,
+      "original": "Dehydrated Water",
+      "translation": "מים מיובשים",
+      "startingRoom": 0,
       "notes": ""
     },
     {
       "index": 13,
-      "original": "Medallion",
-      "translation": "",
-      "startingRoom": 128,
+      "original": "Sarien ID card",
+      "translation": "כרטיס זיהוי סריאן",
+      "startingRoom": 0,
       "notes": ""
     },
     {
       "index": 14,
-      "original": "MAD",
-      "translation": "",
-      "startingRoom": 117,
+      "original": "Pulseray",
+      "translation": "קרן פעימה",
+      "startingRoom": 0,
       "notes": ""
     },
     {
       "index": 15,
-      "original": "Data Card",
-      "translation": "",
-      "startingRoom": 129,
+      "original": "Gas Grenade",
+      "translation": "רימון גז",
+      "startingRoom": 0,
       "notes": ""
     },
     {
       "index": 16,
-      "original": "Module B",
-      "translation": "",
-      "startingRoom": 135,
+      "original": "Remote Control",
+      "translation": "שלט רחוק",
+      "startingRoom": 0,
       "notes": ""
     },
     {
       "index": 18,
-      "original": "Crowbar",
-      "translation": "",
-      "startingRoom": 136,
+      "original": "Plant",
+      "translation": "צמח",
+      "startingRoom": 0,
       "notes": ""
     },
     {
       "index": 19,
-      "original": "Stuffed Orb",
-      "translation": "",
-      "startingRoom": 129,
+      "original": "Xenon Army Knife",
+      "translation": "סכין צבא קסנון",
+      "startingRoom": 0,
       "notes": ""
     },
     {
       "index": 20,
-      "original": "Key",
-      "translation": "",
-      "startingRoom": 106,
+      "original": "Own 1 Used Ship",
+      "translation": "חללית משומשת",
+      "startingRoom": 0,
+      "notes": ""
+    },
+    {
+      "index": 21,
+      "original": "Control",
+      "translation": "בקרה",
+      "startingRoom": 0,
       "notes": ""
     },
     {
       "index": 22,
-      "original": "Module A",
-      "translation": "",
-      "startingRoom": 111,
+      "original": "Survival Kit",
+      "translation": "ערכת הישרדות",
+      "startingRoom": 0,
       "notes": ""
     },
     {
       "index": 23,
-      "original": "Module C",
-      "translation": "",
-      "startingRoom": 113,
+      "original": "Pocket Lint",
+      "translation": "מוך כיס",
+      "startingRoom": 0,
       "notes": ""
     },
     {
       "index": 24,
-      "original": "Module D",
-      "translation": "",
-      "startingRoom": 150,
-      "notes": ""
-    },
-    {
-      "index": 25,
-      "original": "Badges",
-      "translation": "",
-      "startingRoom": 145,
-      "notes": ""
-    },
-    {
-      "index": 26,
-      "original": "Stuffed Orbs",
-      "translation": "",
-      "startingRoom": 129,
-      "notes": ""
-    },
-    {
-      "index": 27,
-      "original": "Badge",
-      "translation": "",
-      "startingRoom": 145,
+      "original": "nothing",
+      "translation": "כלום",
+      "startingRoom": 0,
       "notes": ""
     }
   ]
