@@ -27,3 +27,112 @@
   border-color: #0066cc;
   box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
 }
+
+/* ===========================================
+   MOBILE RESPONSIVE STYLES
+   =========================================== */
+
+@media (max-width: 768px) {
+  /* Hide table header */
+  .translations-table thead {
+    display: none;
+  }
+
+  /* Make table elements block-level */
+  .translations-table,
+  .translations-table tbody,
+  .translations-table tr,
+  .translations-table td {
+    display: block;
+    width: 100%;
+  }
+
+  /* Card layout for rows */
+  .translations-table tbody tr {
+    margin-bottom: 12px;
+    padding: 12px;
+    padding-bottom: 16px;
+    border-radius: 8px;
+    border: 1px solid #d0d0d0;
+    border-bottom: 3px solid #c0c0c0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: white;
+  }
+
+  .translations-table td {
+    padding: 8px 0;
+    border: none;
+  }
+
+  /* View number badge */
+  .translations-table td.view-number {
+    display: inline-block;
+    width: auto;
+    font-size: 12px;
+    padding: 2px 8px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    text-align: right;
+  }
+
+  /* Original / view description */
+  .translations-table td.original.view-description {
+    display: block;
+    width: 100%;
+    max-width: none;
+    margin-top: 8px;
+  }
+
+  .translations-table td.original.view-description::before {
+    content: "מקור:";
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 4px;
+  }
+
+  /* Translation */
+  .translations-table td.translation {
+    display: block;
+    width: 100%;
+  }
+
+  .translations-table td.translation::before {
+    content: "תרגום:";
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 4px;
+  }
+
+  .translations-table td.translation textarea {
+    width: 100%;
+    min-width: unset;
+    min-height: 110px;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  /* Notes */
+  .translations-table td.notes {
+    display: block;
+    width: 100%;
+  }
+
+  .translations-table td.notes::before {
+    content: "הערות:";
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 4px;
+  }
+
+  .translations-table td.notes input {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+  }
+}
