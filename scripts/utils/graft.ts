@@ -141,8 +141,10 @@ export async function ensureGraft(): Promise<string> {
  * Run a graft command with the given arguments
  */
 export function runGraft(graftPath: string, args: string[]): void {
-  const command = `"${graftPath}" ${args.join(' ')}`;
-  log.info(`Running: graft ${args.join(' ')}`);
+  // Quote arguments that contain spaces
+  const quotedArgs = args.map((arg) => (arg.includes(' ') ? `"${arg}"` : arg));
+  const command = `"${graftPath}" ${quotedArgs.join(' ')}`;
+  log.info(`Running: graft ${quotedArgs.join(' ')}`);
   execSync(command, { stdio: 'inherit' });
 }
 
@@ -152,7 +154,7 @@ export function runGraft(graftPath: string, args: string[]): void {
 export const PATCHER_TARGETS = [
   { target: 'linux-x64', suffix: '-linux-x64' },
   { target: 'linux-arm64', suffix: '-linux-arm64' },
-  { target: 'darwin-x64', suffix: '-macos-x64' },
-  { target: 'darwin-arm64', suffix: '-macos-arm64' },
+  { target: 'macos-x64', suffix: '-macos-x64' },
+  { target: 'macos-arm64', suffix: '-macos-arm64' },
   { target: 'windows-x64', suffix: '-windows-x64.exe' },
 ] as const;
