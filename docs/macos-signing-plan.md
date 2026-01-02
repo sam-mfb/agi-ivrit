@@ -1,5 +1,34 @@
 # GitHub Actions Release Pipeline with macOS Signing
 
+## Background
+
+**agi-ivrit** is a project that creates Hebrew translations for classic Sierra AGI (Adventure Game Interpreter) games from the 1980s, such as Space Quest I, Space Quest II, and Manhunter: New York.
+
+### Repository Structure
+
+- **agi-ivrit** (this repo): Contains the translation tooling, build scripts, and translation source files. This is where development happens.
+- **Translation repos** (e.g., `agi-ivrit-sq1`, `agi-ivrit-sq2`, `agi-ivrit-mh1`): Separate public repositories where releases are published. Each contains only the patcher executables for one game—no source code or copyrighted game assets.
+
+This separation exists because:
+1. The main repo contains build tooling that end users don't need
+2. Each game gets its own clean release page
+3. Users can download patchers without navigating a monorepo
+
+### What We're Building
+
+The release process creates **patcher executables** for each platform (Linux, Windows, macOS). Users download the patcher, point it at their original game files, and it applies the Hebrew translation patch.
+
+Currently, patchers are built locally on Linux. The problem: **macOS patchers are unsigned**, which triggers Gatekeeper warnings and makes them difficult for users to run.
+
+### Goal
+
+This plan implements a GitHub Actions workflow that:
+1. Builds all patchers (Linux, Windows, macOS) in CI
+2. Signs and notarizes the macOS patchers with an Apple Developer certificate
+3. Publishes everything to the appropriate translation repo
+
+The local `npm run release <game>` command will orchestrate the entire process, waiting for the GitHub Actions workflow to complete before reporting success.
+
 ## Overview
 Build all patchers (Linux, Windows, macOS) in GitHub Actions, with macOS patchers signed and notarized. Local `npm run release` builds patches and orchestrates the GHA workflow.
 
