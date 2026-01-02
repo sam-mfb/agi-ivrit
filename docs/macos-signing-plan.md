@@ -109,6 +109,65 @@ Using an API key instead of app-specific password is Apple's recommended approac
 | `NOTARY_KEY_ID` | Key ID from App Store Connect (10-char alphanumeric) |
 | `NOTARY_ISSUER` | Issuer ID from App Store Connect (UUID format) |
 
+## Security Hardening
+
+### 1. Graft Binary Verification
+
+To prevent supply chain attacks, pin the graft version and verify its checksum:
+
+```yaml
+env:
+  GRAFT_VERSION: "1.0.0"  # Update when upgrading graft
+  GRAFT_SHA256: "abc123..." # SHA256 of graft-macos-arm64 for this version
+
+steps:
+  - name: Download and verify graft
+    run: |
+      curl -L -o graft "https://github.com/sam-mfb/graft/releases/download/v${GRAFT_VERSION}/graft-macos-arm64"
+      echo "${GRAFT_SHA256}  graft" | shasum -a 256 --check
+      chmod +x graft
+```
+
+When releasing a new graft version, update `GRAFT_VERSION` and `GRAFT_SHA256` in the workflow.
+
+### 2. Action Pinning
+
+Pin all GitHub Actions to full commit SHAs (not mutable version tags):
+
+```yaml
+# Bad - mutable tag can be overwritten
+uses: actions/create-github-app-token@v1
+
+# Good - immutable commit SHA
+uses: actions/create-github-app-token@5d869da34e18e7287c1daad50e0b8ea0cd506b69  # v1.11.0
+```
+
+### 3. Inside-Out Code Signing
+
+Apple recommends signing nested content before the outer bundle. Do not use `--deep`:
+
+```bash
+# Sign the inner binary first
+codesign --force --options runtime \
+  --sign "Developer ID Application: ..." \
+  MyApp.app/Contents/MacOS/MyApp
+
+# Then sign the outer bundle
+codesign --force --options runtime \
+  --sign "Developer ID Application: ..." \
+  MyApp.app
+```
+
+### 4. Secure Secret Handling
+
+Write temporary secret files to `$RUNNER_TEMP` (automatically cleaned up):
+
+```bash
+echo "$NOTARY_KEY" > "$RUNNER_TEMP/notary-key.p8"
+xcrun notarytool submit ... --key "$RUNNER_TEMP/notary-key.p8" ...
+rm -f "$RUNNER_TEMP/notary-key.p8"
+```
+
 ## Files to Create/Modify
 
 ### 1. `.github/workflows/build-release.yml` (new)
@@ -122,19 +181,30 @@ Workflow triggered by `workflow_dispatch` with inputs:
 **Security:** Uses a protected environment ("release") requiring manual approval before secrets are accessible.
 
 Steps:
-1. Generate GitHub App token using `actions/create-github-app-token@v1`
+1. Generate GitHub App token using `actions/create-github-app-token@<SHA>`
 2. Download `patches.zip` from draft release using `gh release download`
 3. Extract patches
-4. Download graft binary for macOS
+4. Download graft binary, **verify SHA256 checksum**
 5. Build ALL patchers with `graft build`:
    - `linux-x64`, `linux-arm64`, `windows-x64`
    - `macos-x64`, `macos-arm64`
-6. Import signing certificate using `apple-actions/import-codesign-certs@v3`
-7. Sign each .app with `codesign --deep --force --options runtime --sign "Developer ID Application: ..." *.app`
-8. Write API key to file, submit for notarization:
+6. Import signing certificate using `apple-actions/import-codesign-certs@<SHA>`
+7. Sign each .app **inside-out** (inner binary first, then bundle):
    ```bash
-   echo "$NOTARY_KEY" > notary-key.p8
-   xcrun notarytool submit app.zip --key notary-key.p8 --key-id $NOTARY_KEY_ID --issuer $NOTARY_ISSUER --wait
+   codesign --force --options runtime --sign "Developer ID Application: ..." \
+     MyApp.app/Contents/MacOS/MyApp
+   codesign --force --options runtime --sign "Developer ID Application: ..." \
+     MyApp.app
+   ```
+8. Write API key to `$RUNNER_TEMP`, submit for notarization:
+   ```bash
+   echo "$NOTARY_KEY" > "$RUNNER_TEMP/notary-key.p8"
+   xcrun notarytool submit app.zip \
+     --key "$RUNNER_TEMP/notary-key.p8" \
+     --key-id $NOTARY_KEY_ID \
+     --issuer $NOTARY_ISSUER \
+     --wait
+   rm -f "$RUNNER_TEMP/notary-key.p8"
    ```
 9. Staple with `xcrun stapler staple`
 10. Zip .app bundles
@@ -195,10 +265,15 @@ Changes:
 
 1. Download an unsigned .app.zip from the Phase 1 release
 
-2. Unzip and sign locally:
+2. Unzip and sign locally (inside-out, no `--deep`):
    ```bash
    unzip sq1-heb-macos-arm64.app.zip
-   codesign --deep --force --options runtime \
+   # Sign inner binary first
+   codesign --force --options runtime \
+     --sign "Developer ID Application: Your Name (TEAMID)" \
+     sq1-heb-macos-arm64.app/Contents/MacOS/sq1-heb
+   # Then sign outer bundle
+   codesign --force --options runtime \
      --sign "Developer ID Application: Your Name (TEAMID)" \
      sq1-heb-macos-arm64.app
    ```
@@ -306,11 +381,22 @@ Changes:
 
 ## Security Notes
 
+**Access Control:**
 - `workflow_dispatch` can only be triggered by users with write access to `agi-ivrit`
 - Protected environment ("release") requires your manual approval before secrets are accessible
-- Signing certificate and Apple credentials are never exposed in logs
+
+**Authentication:**
 - GitHub App tokens are short-lived (8 hours) and scoped only to installed repos
 - App Store Connect API keys are more secure than app-specific passwords for automation
+
+**Supply Chain:**
+- All GitHub Actions pinned to immutable commit SHAs (not version tags)
+- Graft binary version pinned with SHA256 checksum verification
+- Signing certificate and Apple credentials are never exposed in logs
+
+**Code Signing:**
+- Inside-out signing (no `--deep`) ensures proper nested bundle signatures
+- Secrets written to `$RUNNER_TEMP` for automatic cleanup
 
 ## Other Notes
 
