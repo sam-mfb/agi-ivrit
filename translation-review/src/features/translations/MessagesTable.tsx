@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo, useRef } from 'react';
-import { List } from 'react-window';
+import { List, type ListImperativeAPI } from 'react-window';
 import { useAppDispatch, useAppSelector, useIsMobile } from '@/app/hooks';
 import { loadMessages, resetMessages } from './translationsSlice';
 import { MessageRow, type MessageRowExtraProps } from './MessageRow';
@@ -18,7 +18,7 @@ export function MessagesTable() {
   const rowHeight = isMobile ? MOBILE_ROW_HEIGHT : DESKTOP_ROW_HEIGHT;
   const [logicFileFilter, setLogicFileFilter] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const listRef = useRef<{ scrollToRow: (config: { index: number; behavior?: 'auto' | 'smooth' }) => void } | null>(null);
+  const listRef = useRef<ListImperativeAPI | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [listHeight, setListHeight] = useState(DEFAULT_LIST_HEIGHT);
 
@@ -61,7 +61,7 @@ export function MessagesTable() {
   // Reset scroll position on filter change (only if there are results)
   useEffect(() => {
     if (listRef.current && filteredMessages.length > 0) {
-      listRef.current.scrollToRow({ index: 0, behavior: 'auto' });
+      listRef.current.scrollToRow({ index: 0 });
     }
   }, [logicFileFilter, searchQuery, filteredMessages.length]);
 
@@ -186,10 +186,9 @@ export function MessagesTable() {
 
       {/* Virtual List */}
       <List<MessageRowExtraProps>
-        ref={listRef}
+        listRef={listRef}
         rowCount={filteredMessages.length}
         rowHeight={rowHeight}
-        // @ts-expect-error - react-window types don't fully support React 19 memo components
         rowComponent={MessageRow}
         rowProps={{ messages: filteredMessages, searchQuery }}
         overscanCount={OVERSCAN_COUNT}
