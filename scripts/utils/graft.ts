@@ -152,9 +152,9 @@ export function runGraft(graftPath: string, args: string[]): void {
  * All target platforms for patcher creation
  */
 export const PATCHER_TARGETS = [
-  { target: 'linux-x64', suffix: '-linux-x64' },
-  { target: 'linux-arm64', suffix: '-linux-arm64' },
-  { target: 'macos-x64', suffix: '-macos-x64' },
-  { target: 'macos-arm64', suffix: '-macos-arm64' },
-  { target: 'windows-x64', suffix: '-windows-x64.exe' },
+  'linux-x64',
+  'linux-arm64',
+  'macos-x64',
+  'macos-arm64',
+  'windows-x64',
 ] as const;

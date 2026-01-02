@@ -3,17 +3,17 @@
     "sq1": {
       "name": "Space Quest I",
       "repo": "https://github.com/sam-mfb/agi-ivrit-sq1",
-      "status": "in-progress"
+      "version": 0
     },
     "sq2": {
       "name": "Space Quest II",
       "repo": "https://github.com/sam-mfb/agi-ivrit-sq2",
-      "status": "completed"
+      "version": 1
     },
     "mh1": {
       "name": "Manhunter: New York",
       "repo": "https://github.com/sam-mfb/agi-ivrit-mh1",
-      "status": "in-progress"
+      "version": 0
     }
   }
 }

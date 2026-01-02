@@ -1,29 +1,29 @@
 #!/usr/bin/env node
 import { execSync } from 'child_process';
-import { existsSync, readdirSync, readFileSync } from 'fs';
+import { existsSync, readdirSync, readFileSync, writeFileSync, rmSync } from 'fs';
 import { join } from 'path';
 import { log } from './utils/logger.js';
 
 /**
  * Full release workflow
  * - Checks GitHub CLI is authenticated
+ * - Increments version in translations.json
  * - Builds patches and patcher executables
  * - Creates a GitHub release with patchers as assets
  */
 
 const translationSubdir = process.argv[2];
-const version = process.argv[3];
 
-if (!translationSubdir || !version) {
-  log.error('Usage: vite-node scripts/release.ts <translation-subdir> <version>');
-  log.error('Example: vite-node scripts/release.ts sq1 v1.0.0');
+if (!translationSubdir) {
+  log.error('Usage: vite-node scripts/release.ts <translation-subdir>');
+  log.error('Example: vite-node scripts/release.ts sq1');
   process.exit(1);
 }
 
 interface TranslationConfig {
   name: string;
   repo: string;
-  status: string;
+  version: number;
 }
 
 interface TranslationsFile {
@@ -90,25 +90,39 @@ async function main() {
     process.exit(1);
   }
 
-  // Step 3: Run release-patch workflow
+  // Step 3: Increment and save version
+  log.section('Updating version');
+  const newVersion = config.version + 1;
+  log.info(`Version: ${config.version} → ${newVersion}`);
+
+  const translationsPath = 'translations.json';
+  const translationsContent = readFileSync(translationsPath, 'utf-8');
+  const translationsData: TranslationsFile = JSON.parse(translationsContent);
+  translationsData.translations[translationSubdir].version = newVersion;
+  writeFileSync(translationsPath, JSON.stringify(translationsData, null, 2) + '\n');
+  log.success('Version updated in translations.json');
+
+  const versionTag = `v${newVersion}`; // For GitHub release tag
+
+  // Step 4: Run release-patch workflow
   log.section('Building patches');
   try {
-    execSync(`vite-node scripts/release-patch.ts ${translationSubdir}`, { stdio: 'inherit' });
+    execSync(`vite-node scripts/release-patch.ts ${translationSubdir} ${newVersion}`, { stdio: 'inherit' });
     log.success('Patches built');
   } catch (error) {
     log.error('Failed to build patches');
     process.exit(1);
   }
 
-  // Step 4: Verify patchers exist
+  // Step 5: Verify patchers exist
   log.section('Verifying patcher executables');
   if (!existsSync(PATCHERS_DIR)) {
     log.error(`Patchers directory not found: ${PATCHERS_DIR}`);
     process.exit(1);
   }
 
-  const patchers = readdirSync(PATCHERS_DIR).filter((f) =>
-    f.startsWith(`${translationSubdir}-patcher`)
+  let patchers = readdirSync(PATCHERS_DIR).filter((f) =>
+    f.startsWith(`${translationSubdir}-heb`)
   );
 
   if (patchers.length === 0) {
@@ -122,9 +136,26 @@ async function main() {
   }
   log.success('Patchers verified');
 
-  // Step 5: Create GitHub release
+  // Step 6: Zip .app directories for GitHub release
+  log.section('Preparing patchers for upload');
+  for (const patcher of patchers) {
+    if (patcher.endsWith('.app')) {
+      const appPath = join(PATCHERS_DIR, patcher);
+      const zipPath = `${appPath}.zip`;
+      log.info(`Zipping ${patcher}...`);
+      execSync(`zip -r "${zipPath}" "${patcher}"`, { cwd: PATCHERS_DIR, stdio: 'inherit' });
+      rmSync(appPath, { recursive: true, force: true });
+      log.success(`Created ${patcher}.zip`);
+    }
+  }
+  // Re-read patchers list to get .zip files instead of .app directories
+  patchers = readdirSync(PATCHERS_DIR).filter((f) =>
+    f.startsWith(`${translationSubdir}-heb`)
+  );
+
+  // Step 7: Create GitHub release
   log.section('Creating GitHub release');
-  const releaseTitle = `${config.name} Hebrew Translation ${version}`;
+  const releaseTitle = `${config.name} Hebrew Translation ${versionTag}`;
   const releaseNotes = `Hebrew translation patch for ${config.name}.\n\nDownload the appropriate patcher for your platform and run it on your original game directory.`;
 
   const patcherPaths = patchers.map((p) => join(PATCHERS_DIR, p)).join(' ');
@@ -133,7 +164,7 @@ async function main() {
     'gh',
     'release',
     'create',
-    version,
+    versionTag,
     '--repo',
     config.repo,
     '--title',
@@ -143,7 +174,7 @@ async function main() {
     patcherPaths
   ].join(' ');
 
-  log.info(`Creating release ${version} in ${config.repo}...`);
+  log.info(`Creating release ${versionTag} in ${config.repo}...`);
   try {
     execSync(ghCommand, { stdio: 'inherit' });
     log.success('GitHub release created!');
@@ -154,7 +185,7 @@ async function main() {
 
   log.newline();
   log.success('Release complete!');
-  log.info(`View at: ${config.repo}/releases/tag/${version}`);
+  log.info(`View at: ${config.repo}/releases/tag/${versionTag}`);
 }
 
 main().catch((error) => {

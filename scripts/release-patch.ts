@@ -13,17 +13,19 @@ import { ensureGraft, runGraft, PATCHER_TARGETS } from './utils/graft.js';
  */
 
 const translationSubdir = process.argv[2];
+const versionArg = process.argv[3]; // Optional - if not provided, reads from translations.json
 
 if (!translationSubdir) {
-  log.error('Usage: vite-node scripts/release-patch.ts <translation-subdir>');
+  log.error('Usage: vite-node scripts/release-patch.ts <translation-subdir> [version]');
   log.error('Example: vite-node scripts/release-patch.ts sq1');
+  log.error('Example: vite-node scripts/release-patch.ts sq1 v2');
   process.exit(1);
 }
 
 interface TranslationConfig {
   name: string;
   repo: string;
-  status: string;
+  version: number;
 }
 
 interface TranslationsFile {
@@ -69,6 +71,10 @@ async function main() {
     log.error(`Failed to load configuration: ${error instanceof Error ? error.message : error}`);
     process.exit(1);
   }
+
+  // Use provided version or read from translations.json (graft expects integer)
+  const version = versionArg || String(config.version);
+  log.info(`Version: ${version}`);
 
   const patchTitle = `${config.name} Hebrew Patch`;
 
@@ -122,8 +128,15 @@ async function main() {
   }
   mkdirSync(PATCHES_DIR, { recursive: true });
 
+  const patcherName = `${translationSubdir}-heb`;
   try {
-    runGraft(graftPath, ['patch', 'create', ORIG_DIR, BUILD_DIR, PATCHES_DIR, '--title', patchTitle]);
+    runGraft(graftPath, [
+      'patch', 'create',
+      ORIG_DIR, BUILD_DIR, PATCHES_DIR,
+      '-v', version,
+      '--name', patcherName,
+      '--title', patchTitle
+    ]);
     log.success(`Patches created at ${PATCHES_DIR}`);
   } catch (error) {
     log.error('Failed to create patches');
@@ -138,12 +151,11 @@ async function main() {
   }
   mkdirSync(PATCHERS_DIR, { recursive: true });
 
-  for (const { target, suffix } of PATCHER_TARGETS) {
-    const outputPath = `${PATCHERS_DIR}/${translationSubdir}-patcher${suffix}`;
+  for (const target of PATCHER_TARGETS) {
     log.info(`Creating patcher for ${target}...`);
     try {
-      runGraft(graftPath, ['build', 'create', PATCHES_DIR, '--target', target, '-o', outputPath]);
-      log.success(`Created ${outputPath}`);
+      runGraft(graftPath, ['build', PATCHES_DIR, '--target', target, '-o', PATCHERS_DIR]);
+      log.success(`Created patcher for ${target}`);
     } catch (error) {
       log.error(`Failed to create patcher for ${target}`);
       process.exit(1);
