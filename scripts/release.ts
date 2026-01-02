@@ -93,7 +93,8 @@ async function main() {
   // Step 3: Increment and save version
   log.section('Updating version');
   const newVersion = config.version + 1;
-  log.info(`Version: ${config.version} → ${newVersion}`);
+  const oldVersion = config.version;
+  log.info(`Version: ${oldVersion} → ${newVersion}`);
 
   const translationsPath = 'translations.json';
   const translationsContent = readFileSync(translationsPath, 'utf-8');
@@ -104,6 +105,14 @@ async function main() {
 
   const versionTag = `v${newVersion}`; // For GitHub release tag
 
+  // Helper to rollback version on failure
+  const rollbackVersion = () => {
+    log.info(`Rolling back version: ${newVersion} → ${oldVersion}`);
+    translationsData.translations[translationSubdir].version = oldVersion;
+    writeFileSync(translationsPath, JSON.stringify(translationsData, null, 2) + '\n');
+    log.success('Version rolled back');
+  };
+
   // Step 4: Run release-patch workflow
   log.section('Building patches');
   try {
@@ -111,6 +120,7 @@ async function main() {
     log.success('Patches built');
   } catch (error) {
     log.error('Failed to build patches');
+    rollbackVersion();
     process.exit(1);
   }
 
@@ -118,6 +128,7 @@ async function main() {
   log.section('Verifying patcher executables');
   if (!existsSync(PATCHERS_DIR)) {
     log.error(`Patchers directory not found: ${PATCHERS_DIR}`);
+    rollbackVersion();
     process.exit(1);
   }
 
@@ -127,6 +138,7 @@ async function main() {
 
   if (patchers.length === 0) {
     log.error('No patcher executables found');
+    rollbackVersion();
     process.exit(1);
   }
 
@@ -138,15 +150,21 @@ async function main() {
 
   // Step 6: Zip .app directories for GitHub release
   log.section('Preparing patchers for upload');
-  for (const patcher of patchers) {
-    if (patcher.endsWith('.app')) {
-      const appPath = join(PATCHERS_DIR, patcher);
-      const zipPath = `${appPath}.zip`;
-      log.info(`Zipping ${patcher}...`);
-      execSync(`zip -r "${zipPath}" "${patcher}"`, { cwd: PATCHERS_DIR, stdio: 'inherit' });
-      rmSync(appPath, { recursive: true, force: true });
-      log.success(`Created ${patcher}.zip`);
+  try {
+    for (const patcher of patchers) {
+      if (patcher.endsWith('.app')) {
+        const appPath = join(PATCHERS_DIR, patcher);
+        const zipName = `${patcher}.zip`;
+        log.info(`Zipping ${patcher}...`);
+        execSync(`zip -r "${zipName}" "${patcher}"`, { cwd: PATCHERS_DIR, stdio: 'inherit' });
+        rmSync(appPath, { recursive: true, force: true });
+        log.success(`Created ${zipName}`);
+      }
     }
+  } catch (error) {
+    log.error('Failed to prepare patchers for upload');
+    rollbackVersion();
+    process.exit(1);
   }
   // Re-read patchers list to get .zip files instead of .app directories
   patchers = readdirSync(PATCHERS_DIR).filter((f) =>
@@ -180,6 +198,7 @@ async function main() {
     log.success('GitHub release created!');
   } catch (error) {
     log.error('Failed to create GitHub release');
+    rollbackVersion();
     process.exit(1);
   }
 
