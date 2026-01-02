@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '@/app/hooks';
-import { loadObjects, updateObjectTranslation, updateObjectNotes, resetObjects } from './translationsSlice';
+import { loadObjects, updateObjectTranslation, updateObjectNotes, resetObjects, markDirty } from './translationsSlice';
 import type { TranslationObject } from '@/types/translations';
 import './ObjectsTable.css';
 
@@ -82,14 +82,15 @@ export function ObjectsTable() {
                 <input
                   type="text"
                   value={object.translation}
-                  onChange={(e) =>
+                  onChange={(e) => {
+                    dispatch(markDirty());
                     dispatch(
                       updateObjectTranslation({
                         index: object.index,
                         translation: e.target.value,
                       })
-                    )
-                  }
+                    );
+                  }}
                   placeholder="הזן תרגום..."
                 />
               </td>
@@ -98,14 +99,15 @@ export function ObjectsTable() {
                 <input
                   type="text"
                   value={object.notes}
-                  onChange={(e) =>
+                  onChange={(e) => {
+                    dispatch(markDirty());
                     dispatch(
                       updateObjectNotes({
                         index: object.index,
                         notes: e.target.value,
                       })
-                    )
-                  }
+                    );
+                  }}
                   placeholder="הערות..."
                 />
               </td>

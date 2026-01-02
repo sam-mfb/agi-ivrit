@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '@/app/hooks';
-import { loadViews, updateViewTranslation, updateViewNotes, resetViews } from './translationsSlice';
+import { loadViews, updateViewTranslation, updateViewNotes, resetViews, markDirty } from './translationsSlice';
 import type { TranslationView } from '@/types/translations';
 import './ViewsTable.css';
 
@@ -80,14 +80,15 @@ export function ViewsTable() {
               <td className="translation">
                 <textarea
                   value={view.translation}
-                  onChange={(e) =>
+                  onChange={(e) => {
+                    dispatch(markDirty());
                     dispatch(
                       updateViewTranslation({
                         viewNumber: view.viewNumber,
                         translation: e.target.value,
                       })
-                    )
-                  }
+                    );
+                  }}
                   placeholder="הזן תרגום..."
                   rows={3}
                 />
@@ -96,14 +97,15 @@ export function ViewsTable() {
                 <input
                   type="text"
                   value={view.notes}
-                  onChange={(e) =>
+                  onChange={(e) => {
+                    dispatch(markDirty());
                     dispatch(
                       updateViewNotes({
                         viewNumber: view.viewNumber,
                         notes: e.target.value,
                       })
-                    )
-                  }
+                    );
+                  }}
                   placeholder="הערות..."
                 />
               </td>

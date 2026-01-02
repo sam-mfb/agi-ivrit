@@ -19,11 +19,14 @@ interface DataState<T> {
   error: string | null;
 }
 
+export type SaveStatus = 'saved' | 'unsaved' | 'saving';
+
 interface TranslationsState {
   messages: DataState<MessagesFile>;
   objects: DataState<ObjectsFile>;
   vocabulary: DataState<VocabularyFile>;
   views: DataState<ViewsFile>;
+  saveStatus: SaveStatus;
 }
 
 const initialDataState = {
@@ -38,6 +41,7 @@ const initialState: TranslationsState = {
   objects: { ...initialDataState },
   vocabulary: { ...initialDataState },
   views: { ...initialDataState },
+  saveStatus: 'saved',
 };
 
 // Async thunks
@@ -167,6 +171,16 @@ const translationsSlice = createSlice({
       state.vocabulary = { ...initialDataState };
       state.views = { ...initialDataState };
     },
+
+    // Save status reducers
+    markDirty: (state) => {
+      if (state.saveStatus === 'saved') {
+        state.saveStatus = 'unsaved';
+      }
+    },
+    setSaveStatus: (state, action: PayloadAction<SaveStatus>) => {
+      state.saveStatus = action.payload;
+    },
   },
   extraReducers: (builder) => {
     // Messages
@@ -250,6 +264,8 @@ export const {
   resetVocabulary,
   resetViews,
   resetAll,
+  markDirty,
+  setSaveStatus,
 } = translationsSlice.actions;
 
 export default translationsSlice.reducer;

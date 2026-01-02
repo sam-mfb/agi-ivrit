@@ -1,0 +1,33 @@
+/* Save Status Indicator */
+
+.save-status-text {
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.save-status-text.save-status-saved {
+  color: #2e7d32;
+  background-color: #e8f5e9;
+}
+
+.save-status-text.save-status-saving {
+  color: #1565c0;
+  background-color: #e3f2fd;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.save-status-text.save-status-unsaved {
+  color: #e65100;
+  background-color: #fff3e0;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

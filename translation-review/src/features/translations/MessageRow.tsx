@@ -1,6 +1,6 @@
 import { memo, useState, useEffect, useCallback, ReactNode } from 'react';
 import { useAppDispatch } from '@/app/hooks';
-import { updateMessageTranslation, updateMessageNotes } from './translationsSlice';
+import { updateMessageTranslation, updateMessageNotes, markDirty, setSaveStatus } from './translationsSlice';
 import type { TranslationMessage } from '@/types/translations';
 import type { RowComponentProps } from 'react-window';
 
@@ -60,6 +60,9 @@ export const MessageRow = memo(function MessageRow({
           translation: localTranslation,
         })
       );
+    } else {
+      // No actual change - sync status back to saved
+      dispatch(setSaveStatus('saved'));
     }
   }, [dispatch, message, localTranslation]);
 
@@ -72,6 +75,9 @@ export const MessageRow = memo(function MessageRow({
           notes: localNotes,
         })
       );
+    } else {
+      // No actual change - sync status back to saved
+      dispatch(setSaveStatus('saved'));
     }
   }, [dispatch, message, localNotes]);
 
@@ -85,7 +91,10 @@ export const MessageRow = memo(function MessageRow({
       <div className="cell translation">
         <textarea
           value={localTranslation}
-          onChange={(e) => setLocalTranslation(e.target.value)}
+          onChange={(e) => {
+            setLocalTranslation(e.target.value);
+            dispatch(markDirty());
+          }}
           onBlur={handleTranslationBlur}
           placeholder="הזן תרגום..."
         />
@@ -93,7 +102,10 @@ export const MessageRow = memo(function MessageRow({
       <div className="cell notes">
         <textarea
           value={localNotes}
-          onChange={(e) => setLocalNotes(e.target.value)}
+          onChange={(e) => {
+            setLocalNotes(e.target.value);
+            dispatch(markDirty());
+          }}
           onBlur={handleNotesBlur}
           placeholder="הערות..."
         />

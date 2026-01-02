@@ -6,6 +6,7 @@ import { MessagesTable } from '@/features/translations/MessagesTable';
 import { ObjectsTable } from '@/features/translations/ObjectsTable';
 import { VocabularyTable } from '@/features/translations/VocabularyTable';
 import { ViewsTable } from '@/features/translations/ViewsTable';
+import { SaveStatusIndicator } from '@/components/SaveStatusIndicator';
 import './App.css';
 
 // Use VITE_BASE env var if set, otherwise default to /agi-ivrit
@@ -35,20 +36,23 @@ function AppContent() {
       <header className="app-header">
         <h1>בדיקת תרגום</h1>
         {isMobile && (
-          <div className="mobile-header-controls">
-            <button onClick={handleResetAll} className="reset-all-button">
-              איפוס הכל
-            </button>
-            <button
-              className={`hamburger-button ${menuOpen ? 'open' : ''}`}
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label="תפריט"
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
+          <>
+            <SaveStatusIndicator />
+            <div className="mobile-header-controls">
+              <button onClick={handleResetAll} className="reset-all-button">
+                איפוס הכל
+              </button>
+              <button
+                className={`hamburger-button ${menuOpen ? 'open' : ''}`}
+                onClick={() => setMenuOpen(!menuOpen)}
+                aria-label="תפריט"
+              >
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </>
         )}
         <nav className={`tab-navigation ${menuOpen ? 'open' : ''}`}>
           <NavLink to="/messages" className={({ isActive }) => (isActive ? 'tab active' : 'tab')} onClick={handleNavClick}>
@@ -65,9 +69,12 @@ function AppContent() {
           </NavLink>
         </nav>
         {!isMobile && (
-          <button onClick={handleResetAll} className="reset-all-button">
-            איפוס הכל
-          </button>
+          <>
+            <SaveStatusIndicator />
+            <button onClick={handleResetAll} className="reset-all-button">
+              איפוס הכל
+            </button>
+          </>
         )}
       </header>
 

@@ -1,4 +1,5 @@
 import type { Middleware } from '@reduxjs/toolkit';
+import { setSaveStatus } from '@/features/translations/translationsSlice';
 
 const BASE_PATH = import.meta.env.BASE_URL || '/';
 const STORAGE_KEY = `translation-review-state-${BASE_PATH.replace(/\//g, '')}`;
@@ -46,6 +47,9 @@ export const localStorageMiddleware: Middleware = (store) => (next) => (action: 
       clearTimeout(saveTimeout);
     }
 
+    // Mark as saving when debounce starts
+    store.dispatch(setSaveStatus('saving'));
+
     saveTimeout = setTimeout(() => {
       try {
         const state = store.getState();
@@ -71,9 +75,13 @@ export const localStorageMiddleware: Middleware = (store) => (next) => (action: 
         };
 
         localStorage.setItem(STORAGE_KEY, JSON.stringify(stateToPersist));
+
+        // Mark as saved after successful write
+        store.dispatch(setSaveStatus('saved'));
       } catch (error) {
         // localStorage quota exceeded or other error
         console.error('Failed to save state to localStorage:', error);
+        // Keep status as 'saving' or could set to an error state
       }
     }, 300);
   }
@@ -122,6 +130,7 @@ export function loadStateFromLocalStorage(): any {
           loaded: parsed.views?.loaded || false,
           error: null,
         },
+        saveStatus: 'saved',
       },
     };
   } catch (error) {

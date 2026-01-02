@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '@/app/hooks';
-import { loadVocabulary, updateVocabularyTranslatedSynonyms, updateVocabularyWordType, updateVocabularyNotes, resetVocabulary } from './translationsSlice';
+import { loadVocabulary, updateVocabularyTranslatedSynonyms, updateVocabularyWordType, updateVocabularyNotes, resetVocabulary, markDirty } from './translationsSlice';
 import type { TranslationVocabulary, WordType } from '@/types/translations';
 import './VocabularyTable.css';
 
@@ -44,6 +44,7 @@ export function VocabularyTable() {
   const handleSynonymInputChange = (wordNumber: number, value: string) => {
     // Store raw value in local state for immediate UI update
     setEditingValues((prev) => ({ ...prev, [wordNumber]: value }));
+    dispatch(markDirty());
 
     // If user types a comma, add the word to the array
     if (value.includes(',')) {
@@ -75,6 +76,7 @@ export function VocabularyTable() {
     const vocab = data?.vocabulary.find((v: TranslationVocabulary) => v.wordNumber === wordNumber);
     if (vocab) {
       const updatedSynonyms = vocab.translatedSynonyms.filter((_: string, idx: number) => idx !== synonymIndex);
+      dispatch(markDirty());
       dispatch(
         updateVocabularyTranslatedSynonyms({
           wordNumber,
@@ -147,14 +149,15 @@ export function VocabularyTable() {
               <td className="word-type">
                 <select
                   value={vocab.wordType || ''}
-                  onChange={(e) =>
+                  onChange={(e) => {
+                    dispatch(markDirty());
                     dispatch(
                       updateVocabularyWordType({
                         wordNumber: vocab.wordNumber,
                         wordType: e.target.value as WordType,
                       })
-                    )
-                  }
+                    );
+                  }}
                 >
                   <option value="">—</option>
                   <option value="noun">שם עצם</option>
@@ -205,14 +208,15 @@ export function VocabularyTable() {
                 <input
                   type="text"
                   value={vocab.notes}
-                  onChange={(e) =>
+                  onChange={(e) => {
+                    dispatch(markDirty());
                     dispatch(
                       updateVocabularyNotes({
                         wordNumber: vocab.wordNumber,
                         notes: e.target.value,
                       })
-                    )
-                  }
+                    );
+                  }}
                   placeholder="הערות..."
                 />
               </td>
