@@ -50,6 +50,40 @@ export const MessageRow = memo(function MessageRow({
     }
   }, [message?.translation, message?.notes]);
 
+  // Auto-save translation after 1000ms of inactivity
+  useEffect(() => {
+    if (!message || localTranslation === message.translation) return;
+
+    const timer = setTimeout(() => {
+      dispatch(
+        updateMessageTranslation({
+          logicFile: message.logicFile,
+          messageNumber: message.messageNumber,
+          translation: localTranslation,
+        })
+      );
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [dispatch, message, localTranslation]);
+
+  // Auto-save notes after 1000ms of inactivity
+  useEffect(() => {
+    if (!message || localNotes === message.notes) return;
+
+    const timer = setTimeout(() => {
+      dispatch(
+        updateMessageNotes({
+          logicFile: message.logicFile,
+          messageNumber: message.messageNumber,
+          notes: localNotes,
+        })
+      );
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [dispatch, message, localNotes]);
+
   // Dispatch to Redux on blur (not on every keystroke)
   const handleTranslationBlur = useCallback(() => {
     if (message && localTranslation !== message.translation) {
