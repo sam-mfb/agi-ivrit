@@ -21,8 +21,8 @@ on:
         type: string
 
 env:
-  GRAFT_VERSION: "0.5.0"
-  GRAFT_SHA256: "80d3c3372eb361ada93a8ac70685d1cf7af7b8f01d35b42a4c4ac2d2188cdf27"
+  GRAFT_VERSION: "0.6.0"
+  GRAFT_SHA256: "005fd6e9a8b5ba54cacf09d92e3f1a7c4a74d2601107e354344005d554f17f35"
 
 jobs:
   build:
