@@ -1,0 +1,119 @@
+name: Build Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      translation:
+        description: 'Translation subdirectory (e.g., sq1, sq2, mh1)'
+        required: true
+        type: string
+      release_tag:
+        description: 'Release tag (e.g., v1)'
+        required: true
+        type: string
+      repo:
+        description: 'Target repository (e.g., sam-mfb/agi-ivrit-sq1)'
+        required: true
+        type: string
+      patcher_name:
+        description: 'Patcher name (e.g., sq1-heb)'
+        required: true
+        type: string
+
+env:
+  GRAFT_VERSION: "0.4.0"
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Parse repository info
+        id: repo-info
+        run: |
+          FULL_REPO="${{ inputs.repo }}"
+          OWNER="${FULL_REPO%%/*}"
+          REPO_NAME="${FULL_REPO##*/}"
+          echo "owner=$OWNER" >> $GITHUB_OUTPUT
+          echo "name=$REPO_NAME" >> $GITHUB_OUTPUT
+
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          owner: ${{ steps.repo-info.outputs.owner }}
+          repositories: ${{ steps.repo-info.outputs.name }}
+
+      - name: Download patches.zip from draft release
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          gh release download "${{ inputs.release_tag }}" \
+            --repo "${{ inputs.repo }}" \
+            --pattern "patches.zip"
+          unzip patches.zip
+          ls -la patches/
+
+      - name: Download graft binary
+        run: |
+          curl -L -o graft "https://github.com/sam-mfb/graft/releases/download/v${GRAFT_VERSION}/graft-macos-arm64"
+          chmod +x graft
+          ./graft --version
+
+      - name: Build patchers for all platforms
+        run: |
+          mkdir -p patchers
+
+          for target in linux-x64 linux-arm64 windows-x64 macos-x64 macos-arm64; do
+            echo "Building patcher for $target..."
+            ./graft build patches --target "$target" -o patchers
+          done
+
+          echo "Built patchers:"
+          ls -la patchers/
+
+      - name: Prepare patchers for upload
+        run: |
+          cd patchers
+
+          # Zip .app directories for macOS patchers
+          for app in *.app; do
+            if [ -d "$app" ]; then
+              echo "Zipping $app..."
+              zip -r "${app}.zip" "$app"
+              rm -rf "$app"
+            fi
+          done
+
+          echo "Final patchers:"
+          ls -la
+
+      - name: Upload patchers to release
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          for file in patchers/*; do
+            echo "Uploading $file..."
+            gh release upload "${{ inputs.release_tag }}" \
+              --repo "${{ inputs.repo }}" \
+              "$file"
+          done
+
+      - name: Delete patches.zip from release
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          gh release delete-asset "${{ inputs.release_tag }}" \
+            --repo "${{ inputs.repo }}" \
+            --yes \
+            patches.zip
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          gh release edit "${{ inputs.release_tag }}" \
+            --repo "${{ inputs.repo }}" \
+            --draft=false
