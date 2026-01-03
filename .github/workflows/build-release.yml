@@ -27,6 +27,7 @@ env:
 jobs:
   build:
     runs-on: macos-latest
+    environment: release  # Requires manual approval before accessing secrets
 
     steps:
       - name: Parse repository info
@@ -40,7 +41,7 @@ jobs:
 
       - name: Generate GitHub App token
         id: app-token
-        uses: actions/create-github-app-token@v1
+        uses: actions/create-github-app-token@d72941d797fd3113feb6b93fd0dec494b13a2547  # v1
         with:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
@@ -75,6 +76,43 @@ jobs:
 
           echo "Built patchers:"
           ls -la patchers/
+
+      - name: Import code signing certificate
+        uses: apple-actions/import-codesign-certs@63fff01cd422d4b7b855d40ca1e9d34d2de9427d  # v3
+        with:
+          p12-file-base64: ${{ secrets.MACOS_CERTIFICATE }}
+          p12-password: ${{ secrets.MACOS_CERTIFICATE_PWD }}
+
+      - name: Sign macOS .app bundles
+        run: |
+          cd patchers
+
+          for app in *.app; do
+            if [ -d "$app" ]; then
+              echo "Signing $app..."
+
+              # Sign inner binary first (inside-out signing)
+              BINARY_PATH="$app/Contents/MacOS/graft-gui"
+              if [ -f "$BINARY_PATH" ]; then
+                codesign --force --options runtime \
+                  --sign "Developer ID Application: Samuel Davidoff (F775PQPJJC)" \
+                  --timestamp \
+                  "$BINARY_PATH"
+                echo "  ✓ Signed inner binary"
+              fi
+
+              # Then sign outer bundle
+              codesign --force --options runtime \
+                --sign "Developer ID Application: Samuel Davidoff (F775PQPJJC)" \
+                --timestamp \
+                "$app"
+              echo "  ✓ Signed bundle"
+
+              # Verify signature
+              codesign --verify --verbose=2 "$app"
+              echo "  ✓ Signature verified"
+            fi
+          done
 
       - name: Prepare patchers for upload
         run: |
