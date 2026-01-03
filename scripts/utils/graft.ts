@@ -9,8 +9,8 @@ import { execSync } from 'child_process';
 import { log } from './logger.js';
 import https from 'https';
 
-const GRAFT_CACHE_DIR = 'project/.graft';
 const GRAFT_VERSION = '0.6.1'; // Update this when updating .github/workflows/build-release.yml
+const GRAFT_CACHE_DIR = `project/.graft/v${GRAFT_VERSION}`; // Versioned cache directory
 const GRAFT_RELEASE_URL = `https://github.com/sam-mfb/graft/releases/download/v${GRAFT_VERSION}`;
 
 type Platform = 'linux' | 'macos' | 'windows';
