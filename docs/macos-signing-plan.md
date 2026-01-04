@@ -345,15 +345,41 @@ Changes:
    - `NOTARY_KEY_ID` - 10-character key ID
    - `NOTARY_ISSUER` - UUID issuer ID
 
-2. Update workflow:
-   - Write .p8 key to temp file
-   - Submit .app.zip to notarization with `xcrun notarytool submit --key ... --wait`
-   - Staple with `xcrun stapler staple`
-   - Re-zip after stapling
-   - Clean up temp key file
+2. Update main workflow with timeout protection:
+   - Add job-level timeout: `timeout-minutes: 45`
+   - Write .p8 key to temp file in `$RUNNER_TEMP`
+   - Zip each signed .app: `ditto -c -k --keepParent app.app app.app.zip`
+   - Submit to notarization with timeout:
+     ```bash
+     xcrun notarytool submit app.app.zip \
+       --key "$RUNNER_TEMP/notary-key.p8" \
+       --key-id $NOTARY_KEY_ID \
+       --issuer $NOTARY_ISSUER \
+       --wait \
+       --timeout 30m
+     ```
+   - If successful, unzip, staple, and re-zip:
+     ```bash
+     unzip -q app.app.zip
+     xcrun stapler staple app.app
+     ditto -c -k --keepParent app.app app.app.zip
+     ```
+   - Clean up temp files and unzipped .app directories
+   - Upload notarized .app.zip files to release
 
-3. Test:
+3. Create fallback workflow (`.github/workflows/notarize-fallback.yml`):
+   - Manual trigger with inputs:
+     - `submission_id` - Notarization submission ID
+     - `release_tag` - Release tag to update
+     - `repo` - Target repository
+   - Check notarization status: `xcrun notarytool info <id>`
+   - If accepted, download signed .app.zip from release
+   - Staple and re-upload
+   - Use case: When main workflow times out but Apple completes notarization later
+
+4. Test:
    - Trigger workflow
+   - Verify notarization completes within timeout (typically 5-15 minutes)
    - Download .app, verify on Mac: should open without Gatekeeper warning
    - Check: `spctl -a -vv *.app` should say "accepted" and "Notarized Developer ID"
 
@@ -398,9 +424,39 @@ Changes:
 - Inside-out signing (no `--deep`) ensures proper nested bundle signatures
 - Secrets written to `$RUNNER_TEMP` for automatic cleanup
 
+## Notarization Timeout Strategy
+
+**The Challenge:**
+Apple's notarization service typically completes in 5-15 minutes, but can take up to 24 hours in rare cases. GitHub Actions runners have a 6-hour maximum timeout, making it impractical to wait indefinitely.
+
+**Our Approach:**
+1. **Main workflow timeout:** 45 minutes total, with notarytool timeout of 30 minutes
+2. **Success case (99% of the time):** Notarization completes quickly, apps are stapled and uploaded
+3. **Timeout case (rare):** If notarization exceeds 30 minutes:
+   - Workflow fails but Apple continues processing in the background
+   - Submission ID is logged in workflow output
+   - When Apple completes notarization (check status locally or via email), use the fallback workflow to staple and re-upload
+
+**Manual Fallback Procedure:**
+If the main workflow times out:
+```bash
+# Check notarization status locally
+xcrun notarytool history \
+  --key /path/to/AuthKey.p8 \
+  --key-id KEY_ID \
+  --issuer ISSUER_ID
+
+# Once accepted, trigger the fallback workflow with:
+# - submission_id (from history or workflow logs)
+# - release_tag
+# - repo
+```
+
+The fallback workflow will download the signed apps, staple the notarization ticket, and re-upload.
+
 ## Other Notes
 
 - macOS runners are slower and more expensive than Linux, but simplify the architecture
-- Notarization typically takes 1-5 minutes
 - All patchers are built in GHA for consistency
 - The workflow uses GitHub App tokens to access translation repos for release management
+- The timeout strategy balances reliability (handling the common case) with pragmatism (rare long-running cases require manual intervention)
