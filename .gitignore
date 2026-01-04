@@ -21,3 +21,6 @@ translation-review/dist/
 # Ignore fetched translations (only example is committed)
 translations/*
 !translations/example/
+
+# Temporary working directory
+tmp/
