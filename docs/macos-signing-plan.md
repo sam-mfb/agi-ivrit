@@ -345,11 +345,12 @@ Changes:
    - `NOTARY_KEY_ID` - 10-character key ID
    - `NOTARY_ISSUER` - UUID issuer ID
 
-2. Update main workflow with timeout protection:
+2. Update main workflow with timeout protection (Option B: Upload first, then notarize):
    - Add job-level timeout: `timeout-minutes: 45`
+   - After signing, zip and **upload signed apps immediately** to draft release
+   - This preserves signed apps even if notarization times out
    - Write .p8 key to temp file in `$RUNNER_TEMP`
-   - Zip each signed .app: `ditto -c -k --keepParent app.app app.app.zip`
-   - Submit to notarization with timeout:
+   - For each macOS .app.zip already uploaded, submit to notarization:
      ```bash
      xcrun notarytool submit app.app.zip \
        --key "$RUNNER_TEMP/notary-key.p8" \
@@ -358,24 +359,35 @@ Changes:
        --wait \
        --timeout 30m
      ```
-   - If successful, unzip, staple, and re-zip:
-     ```bash
-     unzip -q app.app.zip
-     xcrun stapler staple app.app
-     ditto -c -k --keepParent app.app app.app.zip
-     ```
-   - Clean up temp files and unzipped .app directories
-   - Upload notarized .app.zip files to release
+   - **If successful:** For each notarized app:
+     - Download the signed .app.zip from release
+     - Unzip, staple, re-zip:
+       ```bash
+       unzip -q app.app.zip
+       xcrun stapler staple app.app
+       ditto -c -k --keepParent app.app app.app.zip
+       ```
+     - Delete old signed .app.zip from release
+     - Upload notarized+stapled .app.zip to release
+     - Delete patches.zip from release
+     - Publish release (draft=false)
+   - **If timeout:** Workflow fails, release remains draft with signed (but not notarized) apps + patches.zip
+   - Clean up temp files
 
 3. Create fallback workflow (`.github/workflows/notarize-fallback.yml`):
    - Manual trigger with inputs:
-     - `submission_id` - Notarization submission ID
+     - `submission_id` - Notarization submission ID from failed workflow logs
      - `release_tag` - Release tag to update
      - `repo` - Target repository
-   - Check notarization status: `xcrun notarytool info <id>`
-   - If accepted, download signed .app.zip from release
-   - Staple and re-upload
-   - Use case: When main workflow times out but Apple completes notarization later
+   - Check notarization status: `xcrun notarytool info <id> --key ... --key-id ... --issuer ...`
+   - If accepted:
+     - Download signed .app.zip from draft release
+     - Unzip, staple notarization ticket, re-zip
+     - Delete old signed .app.zip from release
+     - Upload notarized+stapled .app.zip to release
+     - Delete patches.zip from release
+     - Publish release (draft=false)
+   - Use case: When main workflow times out but Apple completes notarization later (rare)
 
 4. Test:
    - Trigger workflow
@@ -429,13 +441,35 @@ Changes:
 **The Challenge:**
 Apple's notarization service typically completes in 5-15 minutes, but can take up to 24 hours in rare cases. GitHub Actions runners have a 6-hour maximum timeout, making it impractical to wait indefinitely.
 
-**Our Approach:**
-1. **Main workflow timeout:** 45 minutes total, with notarytool timeout of 30 minutes
-2. **Success case (99% of the time):** Notarization completes quickly, apps are stapled and uploaded
-3. **Timeout case (rare):** If notarization exceeds 30 minutes:
-   - Workflow fails but Apple continues processing in the background
-   - Submission ID is logged in workflow output
-   - When Apple completes notarization (check status locally or via email), use the fallback workflow to staple and re-upload
+**Our Approach (Option B: Upload First, Then Notarize):**
+To ensure signed apps are preserved even if notarization times out, we upload them to the draft release before notarizing:
+
+**Main Workflow Flow:**
+1. Build all patchers (Linux, Windows, macOS)
+2. Sign macOS .app bundles
+3. **Upload all patchers to draft release** (including signed macOS apps)
+4. Submit signed macOS apps for notarization (30-minute timeout)
+5. **Success path (99% of the time):**
+   - Notarization completes quickly
+   - Download signed apps, staple tickets, re-upload
+   - Delete patches.zip
+   - Publish release
+6. **Timeout path (rare):**
+   - Workflow fails after 30 minutes
+   - Release stays in **draft** state
+   - Contains: signed (but not notarized) macOS apps + all other patchers + patches.zip
+   - Apple continues processing in background
+
+**Fallback Recovery:**
+When notarization eventually completes (check via email or `xcrun notarytool history`):
+1. Trigger the fallback workflow with submission ID
+2. Fallback downloads signed apps from draft release
+3. Staples notarization tickets
+4. Re-uploads notarized apps
+5. Deletes patches.zip
+6. Publishes release
+
+This approach ensures no work is lost on timeout and the fallback workflow can complete the process.
 
 **Manual Fallback Procedure:**
 If the main workflow times out:
