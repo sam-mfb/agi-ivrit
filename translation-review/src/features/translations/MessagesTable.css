@@ -165,10 +165,24 @@
 .virtual-table-header,
 .virtual-row {
   display: grid;
-  grid-template-columns: 100px 50px 1fr 1.2fr 160px 90px;
+  grid-template-columns: 100px 50px minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) 50px;
   gap: 8px;
   align-items: start;
 }
+
+.virtual-row .cell.logic-file { grid-column: 1; }
+.virtual-row .cell.message-number { grid-column: 2; }
+.virtual-row .cell.original { grid-column: 3; }
+.virtual-row .cell.translation { grid-column: 4; }
+.virtual-row .cell.notes { grid-column: 5; }
+.virtual-row .cell.placeholders { grid-column: 6; }
+
+.virtual-table-header .header-cell:nth-child(1) { grid-column: 1; }
+.virtual-table-header .header-cell:nth-child(2) { grid-column: 2; }
+.virtual-table-header .header-cell:nth-child(3) { grid-column: 3; }
+.virtual-table-header .header-cell:nth-child(4) { grid-column: 4; }
+.virtual-table-header .header-cell:nth-child(5) { grid-column: 5; }
+.virtual-table-header .header-cell:nth-child(6) { grid-column: 6; }
 
 .virtual-table-header {
   background-color: #f5f5f5;
@@ -214,7 +228,6 @@
 }
 
 .original {
-  max-width: 300px;
   word-wrap: break-word;
   max-height: 64px;
   overflow-y: auto;
@@ -231,18 +244,17 @@
   font-family: inherit;
   resize: none;
   overflow-y: auto;
-  min-height: 60px;
-  max-height: 120px;
+  min-height: 88px;
+  max-height: 140px;
   line-height: 1.4;
   box-sizing: border-box;
+  field-sizing: content;
 }
 
 .translation {
-  min-width: 250px;
 }
 
 .notes {
-  min-width: 200px;
 }
 
 .translation textarea:focus,
@@ -253,7 +265,6 @@
 }
 
 .placeholders {
-  width: 120px;
 }
 
 .placeholder-badges {

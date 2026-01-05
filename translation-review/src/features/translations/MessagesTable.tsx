@@ -6,7 +6,7 @@ import { MessageRow, type MessageRowExtraProps } from './MessageRow';
 import type { TranslationMessage } from '@/types/translations';
 import './MessagesTable.css';
 
-const DESKTOP_ROW_HEIGHT = 80;
+const DESKTOP_ROW_HEIGHT = 120;
 const MOBILE_ROW_HEIGHT = 440;
 const OVERSCAN_COUNT = 5;
 const DEFAULT_LIST_HEIGHT = 600;

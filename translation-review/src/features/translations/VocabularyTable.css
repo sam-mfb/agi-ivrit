@@ -96,11 +96,11 @@
   box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1);
 }
 
-.notes {
+.translations-table .notes {
   width: 30%;
 }
 
-.notes input {
+.translations-table .notes input {
   width: 100%;
   padding: 6px 8px;
   border: 1px solid #ddd;
@@ -109,7 +109,7 @@
   font-family: inherit;
 }
 
-.notes input:focus {
+.translations-table .notes input:focus {
   outline: none;
   border-color: #0066cc;
   box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1);
