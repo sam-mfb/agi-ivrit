@@ -1,0 +1,150 @@
+name: Notarize Fallback
+
+# Manual fallback workflow for when the main build-release workflow times out
+# waiting for notarization. This completes the release by stapling already-notarized
+# apps and publishing the release.
+
+on:
+  workflow_dispatch:
+    inputs:
+      submission_id:
+        description: 'Notarization submission ID (from failed workflow logs)'
+        required: true
+        type: string
+      release_tag:
+        description: 'Release tag (e.g., v1)'
+        required: true
+        type: string
+      repo:
+        description: 'Target repository (e.g., sam-mfb/agi-ivrit-sq1)'
+        required: true
+        type: string
+
+jobs:
+  fallback:
+    runs-on: macos-latest
+    timeout-minutes: 30
+    environment: release
+
+    steps:
+      - name: Parse repository info
+        id: repo-info
+        run: |
+          FULL_REPO="${{ inputs.repo }}"
+          OWNER="${FULL_REPO%%/*}"
+          REPO_NAME="${FULL_REPO##*/}"
+          echo "owner=$OWNER" >> $GITHUB_OUTPUT
+          echo "name=$REPO_NAME" >> $GITHUB_OUTPUT
+
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@d72941d797fd3113feb6b93fd0dec494b13a2547  # v1
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          owner: ${{ steps.repo-info.outputs.owner }}
+          repositories: ${{ steps.repo-info.outputs.name }}
+
+      - name: Check notarization status
+        env:
+          NOTARY_KEY: ${{ secrets.NOTARY_KEY }}
+          NOTARY_KEY_ID: ${{ secrets.NOTARY_KEY_ID }}
+          NOTARY_ISSUER: ${{ secrets.NOTARY_ISSUER }}
+        run: |
+          echo "$NOTARY_KEY" > "$RUNNER_TEMP/notary-key.p8"
+
+          echo "Checking notarization status for submission ${{ inputs.submission_id }}..."
+          STATUS=$(xcrun notarytool info "${{ inputs.submission_id }}" \
+            --key "$RUNNER_TEMP/notary-key.p8" \
+            --key-id "$NOTARY_KEY_ID" \
+            --issuer "$NOTARY_ISSUER" \
+            --output-format json | jq -r '.status')
+
+          echo "Status: $STATUS"
+
+          if [ "$STATUS" != "Accepted" ]; then
+            echo "Notarization not yet accepted. Current status: $STATUS"
+            echo "Please wait for Apple to complete notarization and try again."
+            rm -f "$RUNNER_TEMP/notary-key.p8"
+            exit 1
+          fi
+
+          echo "Notarization accepted! Proceeding with stapling..."
+          rm -f "$RUNNER_TEMP/notary-key.p8"
+
+      - name: Download macOS apps from draft release
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          mkdir -p patchers
+          cd patchers
+
+          # Download all .app.zip files from the draft release
+          gh release download "${{ inputs.release_tag }}" \
+            --repo "${{ inputs.repo }}" \
+            --pattern "*.app.zip"
+
+          echo "Downloaded macOS apps:"
+          ls -la *.app.zip
+
+      - name: Staple notarization tickets
+        run: |
+          cd patchers
+
+          for zipfile in *.app.zip; do
+            app="${zipfile%.zip}"
+            echo "Stapling $app..."
+
+            # Unzip the signed app
+            unzip -q "$zipfile"
+
+            # Staple the notarization ticket
+            xcrun stapler staple "$app"
+
+            # Re-zip with ditto to preserve macOS metadata
+            rm "$zipfile"
+            ditto -c -k --keepParent "$app" "$zipfile"
+            rm -rf "$app"
+
+            echo "  Stapled and re-zipped $zipfile"
+          done
+
+      - name: Re-upload stapled macOS apps
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          for zipfile in patchers/*.app.zip; do
+            filename=$(basename "$zipfile")
+            echo "Replacing $filename with stapled version..."
+
+            # Delete the signed-only version
+            gh release delete-asset "${{ inputs.release_tag }}" \
+              --repo "${{ inputs.repo }}" \
+              --yes \
+              "$filename"
+
+            # Upload the stapled version
+            gh release upload "${{ inputs.release_tag }}" \
+              --repo "${{ inputs.repo }}" \
+              "$zipfile"
+          done
+
+      - name: Delete patches.zip from release
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          gh release delete-asset "${{ inputs.release_tag }}" \
+            --repo "${{ inputs.repo }}" \
+            --yes \
+            patches.zip
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          gh release edit "${{ inputs.release_tag }}" \
+            --repo "${{ inputs.repo }}" \
+            --draft=false
+
+          echo "Release published successfully!"
+          echo "https://github.com/${{ inputs.repo }}/releases/tag/${{ inputs.release_tag }}"

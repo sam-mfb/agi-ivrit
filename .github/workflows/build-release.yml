@@ -27,6 +27,7 @@ env:
 jobs:
   build:
     runs-on: macos-latest
+    timeout-minutes: 45
     environment: release  # Requires manual approval before accessing secrets
 
     steps:
@@ -139,6 +140,68 @@ jobs:
             gh release upload "${{ inputs.release_tag }}" \
               --repo "${{ inputs.repo }}" \
               "$file"
+          done
+
+      - name: Notarize macOS apps
+        env:
+          NOTARY_KEY: ${{ secrets.NOTARY_KEY }}
+          NOTARY_KEY_ID: ${{ secrets.NOTARY_KEY_ID }}
+          NOTARY_ISSUER: ${{ secrets.NOTARY_ISSUER }}
+        run: |
+          echo "$NOTARY_KEY" > "$RUNNER_TEMP/notary-key.p8"
+
+          for zipfile in patchers/*.app.zip; do
+            echo "Submitting $zipfile for notarization..."
+            xcrun notarytool submit "$zipfile" \
+              --key "$RUNNER_TEMP/notary-key.p8" \
+              --key-id "$NOTARY_KEY_ID" \
+              --issuer "$NOTARY_ISSUER" \
+              --wait \
+              --timeout 30m
+          done
+
+          rm -f "$RUNNER_TEMP/notary-key.p8"
+
+      - name: Staple notarization tickets
+        run: |
+          cd patchers
+
+          for zipfile in *.app.zip; do
+            app="${zipfile%.zip}"
+            echo "Stapling $app..."
+
+            # Unzip the signed app
+            unzip -q "$zipfile"
+
+            # Staple the notarization ticket
+            xcrun stapler staple "$app"
+
+            # Re-zip with ditto to preserve macOS metadata
+            rm "$zipfile"
+            ditto -c -k --keepParent "$app" "$zipfile"
+            rm -rf "$app"
+
+            echo "  Stapled and re-zipped $zipfile"
+          done
+
+      - name: Re-upload stapled macOS apps
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          for zipfile in patchers/*.app.zip; do
+            filename=$(basename "$zipfile")
+            echo "Replacing $filename with stapled version..."
+
+            # Delete the signed-only version
+            gh release delete-asset "${{ inputs.release_tag }}" \
+              --repo "${{ inputs.repo }}" \
+              --yes \
+              "$filename"
+
+            # Upload the stapled version
+            gh release upload "${{ inputs.release_tag }}" \
+              --repo "${{ inputs.repo }}" \
+              "$zipfile"
           done
 
       - name: Delete patches.zip from release
